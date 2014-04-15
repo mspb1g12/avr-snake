@@ -1,0 +1,3517 @@
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 1
+
+
+   1               		.file	"lcd.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.section	.debug_abbrev,"",@progbits
+   9               	.Ldebug_abbrev0:
+  10               		.section	.debug_info,"",@progbits
+  11               	.Ldebug_info0:
+  12               		.section	.debug_line,"",@progbits
+  13               	.Ldebug_line0:
+  14               		.text
+  15               	.Ltext0:
+  16               	.global	set_orientation
+  17               		.type	set_orientation, @function
+  18               	set_orientation:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 9C01      		movw r18,r24
+  25               	.LM2:
+  26 0002 9093 0000 		sts (display+4)+1,r25
+  27 0006 8093 0000 		sts display+4,r24
+  28               	.LM3:
+  29 000a 1498      		cbi 34-32,4
+  30 000c 86E3      		ldi r24,lo8(54)
+  31               	.LVL1:
+  32 000e 88B9      		out 40-32,r24
+  33 0010 1398      		cbi 34-32,3
+  34 0012 139A      		sbi 34-32,3
+  35 0014 149A      		sbi 34-32,4
+  36               	.LM4:
+  37 0016 2115      		cp r18,__zero_reg__
+  38 0018 3105      		cpc r19,__zero_reg__
+  39 001a 01F4      		brne .L2
+  40               	.LM5:
+  41 001c 80EF      		ldi r24,lo8(240)
+  42 001e 90E0      		ldi r25,hi8(240)
+  43 0020 9093 0000 		sts (display)+1,r25
+  44 0024 8093 0000 		sts display,r24
+  45               	.LM6:
+  46 0028 80E4      		ldi r24,lo8(320)
+  47 002a 91E0      		ldi r25,hi8(320)
+  48 002c 9093 0000 		sts (display+2)+1,r25
+  49 0030 8093 0000 		sts display+2,r24
+  50               	.LM7:
+  51 0034 88E4      		ldi r24,lo8(72)
+  52 0036 00C0      		rjmp .L7
+  53               	.L2:
+  54               	.LM8:
+  55 0038 2130      		cpi r18,1
+  56 003a 3105      		cpc r19,__zero_reg__
+  57 003c 01F4      		brne .L4
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 2
+
+
+  58               	.LM9:
+  59 003e 80E4      		ldi r24,lo8(320)
+  60 0040 91E0      		ldi r25,hi8(320)
+  61 0042 9093 0000 		sts (display)+1,r25
+  62 0046 8093 0000 		sts display,r24
+  63               	.LM10:
+  64 004a 80EF      		ldi r24,lo8(240)
+  65 004c 90E0      		ldi r25,hi8(240)
+  66 004e 9093 0000 		sts (display+2)+1,r25
+  67 0052 8093 0000 		sts display+2,r24
+  68               	.LM11:
+  69 0056 88EE      		ldi r24,lo8(-24)
+  70 0058 00C0      		rjmp .L7
+  71               	.L4:
+  72               	.LM12:
+  73 005a 2230      		cpi r18,2
+  74 005c 3105      		cpc r19,__zero_reg__
+  75 005e 01F4      		brne .L5
+  76               	.LM13:
+  77 0060 80EF      		ldi r24,lo8(240)
+  78 0062 90E0      		ldi r25,hi8(240)
+  79 0064 9093 0000 		sts (display)+1,r25
+  80 0068 8093 0000 		sts display,r24
+  81               	.LM14:
+  82 006c 80E4      		ldi r24,lo8(320)
+  83 006e 91E0      		ldi r25,hi8(320)
+  84 0070 9093 0000 		sts (display+2)+1,r25
+  85 0074 8093 0000 		sts display+2,r24
+  86               	.LM15:
+  87 0078 88E8      		ldi r24,lo8(-120)
+  88 007a 00C0      		rjmp .L7
+  89               	.L5:
+  90               	.LM16:
+  91 007c 2330      		cpi r18,3
+  92 007e 3105      		cpc r19,__zero_reg__
+  93 0080 01F4      		brne .L3
+  94               	.LM17:
+  95 0082 80E4      		ldi r24,lo8(320)
+  96 0084 91E0      		ldi r25,hi8(320)
+  97 0086 9093 0000 		sts (display)+1,r25
+  98 008a 8093 0000 		sts display,r24
+  99               	.LM18:
+ 100 008e 80EF      		ldi r24,lo8(240)
+ 101 0090 90E0      		ldi r25,hi8(240)
+ 102 0092 9093 0000 		sts (display+2)+1,r25
+ 103 0096 8093 0000 		sts display+2,r24
+ 104               	.LM19:
+ 105 009a 88E2      		ldi r24,lo8(40)
+ 106               	.L7:
+ 107 009c 88B9      		out 40-32,r24
+ 108 009e 1398      		cbi 34-32,3
+ 109 00a0 139A      		sbi 34-32,3
+ 110               	.L3:
+ 111               	.LM20:
+ 112 00a2 1498      		cbi 34-32,4
+ 113 00a4 8AE2      		ldi r24,lo8(42)
+ 114 00a6 88B9      		out 40-32,r24
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 3
+
+
+ 115 00a8 1398      		cbi 34-32,3
+ 116 00aa 139A      		sbi 34-32,3
+ 117 00ac 149A      		sbi 34-32,4
+ 118               	.LM21:
+ 119 00ae 18B8      		out 40-32,__zero_reg__
+ 120 00b0 1398      		cbi 34-32,3
+ 121 00b2 139A      		sbi 34-32,3
+ 122 00b4 18B8      		out 40-32,__zero_reg__
+ 123 00b6 1398      		cbi 34-32,3
+ 124 00b8 139A      		sbi 34-32,3
+ 125               	.LM22:
+ 126 00ba 8091 0000 		lds r24,display
+ 127 00be 9091 0000 		lds r25,(display)+1
+ 128 00c2 0197      		sbiw r24,1
+ 129 00c4 98B9      		out 40-32,r25
+ 130 00c6 0196      		adiw r24,1
+ 131 00c8 1398      		cbi 34-32,3
+ 132 00ca 139A      		sbi 34-32,3
+ 133 00cc 8150      		subi r24,lo8(-(-1))
+ 134 00ce 88B9      		out 40-32,r24
+ 135 00d0 1398      		cbi 34-32,3
+ 136 00d2 139A      		sbi 34-32,3
+ 137               	.LM23:
+ 138 00d4 1498      		cbi 34-32,4
+ 139 00d6 8BE2      		ldi r24,lo8(43)
+ 140 00d8 88B9      		out 40-32,r24
+ 141 00da 1398      		cbi 34-32,3
+ 142 00dc 139A      		sbi 34-32,3
+ 143 00de 149A      		sbi 34-32,4
+ 144               	.LM24:
+ 145 00e0 18B8      		out 40-32,__zero_reg__
+ 146 00e2 1398      		cbi 34-32,3
+ 147 00e4 139A      		sbi 34-32,3
+ 148 00e6 18B8      		out 40-32,__zero_reg__
+ 149 00e8 1398      		cbi 34-32,3
+ 150 00ea 139A      		sbi 34-32,3
+ 151               	.LM25:
+ 152 00ec 8091 0000 		lds r24,display+2
+ 153 00f0 9091 0000 		lds r25,(display+2)+1
+ 154 00f4 0197      		sbiw r24,1
+ 155 00f6 98B9      		out 40-32,r25
+ 156 00f8 0196      		adiw r24,1
+ 157 00fa 1398      		cbi 34-32,3
+ 158 00fc 139A      		sbi 34-32,3
+ 159 00fe 8150      		subi r24,lo8(-(-1))
+ 160 0100 88B9      		out 40-32,r24
+ 161 0102 1398      		cbi 34-32,3
+ 162 0104 139A      		sbi 34-32,3
+ 163               	/* epilogue start */
+ 164               	.LM26:
+ 165 0106 0895      		ret
+ 166               	.LFE3:
+ 167               		.size	set_orientation, .-set_orientation
+ 168               	.global	fill_rectangle
+ 169               		.type	fill_rectangle, @function
+ 170               	fill_rectangle:
+ 171               	.LFB5:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 4
+
+
+ 172               	.LM27:
+ 173               	.LVL2:
+ 174 0108 EF92      		push r14
+ 175 010a FF92      		push r15
+ 176 010c 0F93      		push r16
+ 177               	.LVL3:
+ 178 010e 1F93      		push r17
+ 179 0110 DF93      		push r29
+ 180 0112 CF93      		push r28
+ 181 0114 CDB7      		in r28,__SP_L__
+ 182 0116 DEB7      		in r29,__SP_H__
+ 183 0118 2897      		sbiw r28,8
+ 184 011a 0FB6      		in __tmp_reg__,__SREG__
+ 185 011c F894      		cli
+ 186 011e DEBF      		out __SP_H__,r29
+ 187 0120 0FBE      		out __SREG__,__tmp_reg__
+ 188 0122 CDBF      		out __SP_L__,r28
+ 189               	/* prologue: function */
+ 190               	/* frame size = 8 */
+ 191 0124 F22F      		mov r31,r18
+ 192 0126 2983      		std Y+1,r18
+ 193 0128 E32F      		mov r30,r19
+ 194 012a 3A83      		std Y+2,r19
+ 195 012c 4B83      		std Y+3,r20
+ 196 012e 5C83      		std Y+4,r21
+ 197 0130 362F      		mov r19,r22
+ 198 0132 6D83      		std Y+5,r22
+ 199 0134 272F      		mov r18,r23
+ 200 0136 7E83      		std Y+6,r23
+ 201 0138 8F83      		std Y+7,r24
+ 202 013a 9887      		std Y+8,r25
+ 203 013c 7801      		movw r14,r16
+ 204               	.LM28:
+ 205 013e AB81      		ldd r26,Y+3
+ 206 0140 BC81      		ldd r27,Y+4
+ 207 0142 062F      		mov r16,r22
+ 208 0144 172F      		mov r17,r23
+ 209 0146 6F81      		ldd r22,Y+7
+ 210 0148 7885      		ldd r23,Y+8
+ 211               	.LM29:
+ 212 014a 1498      		cbi 34-32,4
+ 213 014c 8AE2      		ldi r24,lo8(42)
+ 214 014e 88B9      		out 40-32,r24
+ 215 0150 1398      		cbi 34-32,3
+ 216 0152 139A      		sbi 34-32,3
+ 217 0154 149A      		sbi 34-32,4
+ 218               	.LM30:
+ 219 0156 E8B9      		out 40-32,r30
+ 220 0158 1398      		cbi 34-32,3
+ 221 015a 139A      		sbi 34-32,3
+ 222 015c F8B9      		out 40-32,r31
+ 223 015e 1398      		cbi 34-32,3
+ 224 0160 139A      		sbi 34-32,3
+ 225               	.LM31:
+ 226 0162 B8B9      		out 40-32,r27
+ 227 0164 1398      		cbi 34-32,3
+ 228 0166 139A      		sbi 34-32,3
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 5
+
+
+ 229 0168 A8B9      		out 40-32,r26
+ 230 016a 1398      		cbi 34-32,3
+ 231 016c 139A      		sbi 34-32,3
+ 232               	.LM32:
+ 233 016e 1498      		cbi 34-32,4
+ 234 0170 8BE2      		ldi r24,lo8(43)
+ 235 0172 88B9      		out 40-32,r24
+ 236 0174 1398      		cbi 34-32,3
+ 237 0176 139A      		sbi 34-32,3
+ 238 0178 149A      		sbi 34-32,4
+ 239               	.LM33:
+ 240 017a 28B9      		out 40-32,r18
+ 241 017c 1398      		cbi 34-32,3
+ 242 017e 139A      		sbi 34-32,3
+ 243 0180 38B9      		out 40-32,r19
+ 244 0182 1398      		cbi 34-32,3
+ 245 0184 139A      		sbi 34-32,3
+ 246               	.LM34:
+ 247 0186 78B9      		out 40-32,r23
+ 248 0188 1398      		cbi 34-32,3
+ 249 018a 139A      		sbi 34-32,3
+ 250 018c 68B9      		out 40-32,r22
+ 251 018e 1398      		cbi 34-32,3
+ 252 0190 139A      		sbi 34-32,3
+ 253               	.LM35:
+ 254 0192 1498      		cbi 34-32,4
+ 255 0194 8CE2      		ldi r24,lo8(44)
+ 256 0196 88B9      		out 40-32,r24
+ 257 0198 1398      		cbi 34-32,3
+ 258 019a 139A      		sbi 34-32,3
+ 259 019c 149A      		sbi 34-32,4
+ 260               	.LM36:
+ 261 019e 2F2F      		mov r18,r31
+ 262               	.LVL4:
+ 263 01a0 3E2F      		mov r19,r30
+ 264               	.LVL5:
+ 265 01a2 C901      		movw r24,r18
+ 266               	.LVL6:
+ 267 01a4 AC01      		movw r20,r24
+ 268               	.LVL7:
+ 269 01a6 00C0      		rjmp .L9
+ 270               	.LVL8:
+ 271               	.L10:
+ 272               	.LM37:
+ 273 01a8 F8B8      		out 40-32,r15
+ 274               	.LM38:
+ 275 01aa 1398      		cbi 34-32,3
+ 276 01ac 139A      		sbi 34-32,3
+ 277 01ae E8B8      		out 40-32,r14
+ 278 01b0 1398      		cbi 34-32,3
+ 279 01b2 139A      		sbi 34-32,3
+ 280               	.LM39:
+ 281 01b4 2F5F      		subi r18,lo8(-(1))
+ 282 01b6 3F4F      		sbci r19,hi8(-(1))
+ 283               	.L12:
+ 284 01b8 6217      		cp r22,r18
+ 285 01ba 7307      		cpc r23,r19
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 6
+
+
+ 286 01bc 00F4      		brsh .L10
+ 287               	.LM40:
+ 288 01be 4F5F      		subi r20,lo8(-(1))
+ 289 01c0 5F4F      		sbci r21,hi8(-(1))
+ 290               	.LVL9:
+ 291               	.L9:
+ 292 01c2 A417      		cp r26,r20
+ 293 01c4 B507      		cpc r27,r21
+ 294 01c6 00F0      		brlo .L13
+ 295 01c8 9801      		movw r18,r16
+ 296               	.LVL10:
+ 297 01ca 00C0      		rjmp .L12
+ 298               	.LVL11:
+ 299               	.L13:
+ 300               	/* epilogue start */
+ 301               	.LM41:
+ 302 01cc 2896      		adiw r28,8
+ 303 01ce 0FB6      		in __tmp_reg__,__SREG__
+ 304 01d0 F894      		cli
+ 305 01d2 DEBF      		out __SP_H__,r29
+ 306 01d4 0FBE      		out __SREG__,__tmp_reg__
+ 307 01d6 CDBF      		out __SP_L__,r28
+ 308 01d8 CF91      		pop r28
+ 309 01da DF91      		pop r29
+ 310 01dc 1F91      		pop r17
+ 311 01de 0F91      		pop r16
+ 312 01e0 FF90      		pop r15
+ 313               	.LVL12:
+ 314 01e2 EF90      		pop r14
+ 315               	.LVL13:
+ 316 01e4 0895      		ret
+ 317               	.LFE5:
+ 318               		.size	fill_rectangle, .-fill_rectangle
+ 319               	.global	draw_rectangle
+ 320               		.type	draw_rectangle, @function
+ 321               	draw_rectangle:
+ 322               	.LFB4:
+ 323               	.LM42:
+ 324               	.LVL14:
+ 325 01e6 6F92      		push r6
+ 326 01e8 7F92      		push r7
+ 327 01ea 8F92      		push r8
+ 328 01ec 9F92      		push r9
+ 329 01ee AF92      		push r10
+ 330 01f0 BF92      		push r11
+ 331 01f2 CF92      		push r12
+ 332 01f4 DF92      		push r13
+ 333 01f6 EF92      		push r14
+ 334 01f8 FF92      		push r15
+ 335 01fa 0F93      		push r16
+ 336               	.LVL15:
+ 337 01fc 1F93      		push r17
+ 338 01fe DF93      		push r29
+ 339 0200 CF93      		push r28
+ 340 0202 CDB7      		in r28,__SP_L__
+ 341 0204 DEB7      		in r29,__SP_H__
+ 342 0206 A897      		sbiw r28,40
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 7
+
+
+ 343 0208 0FB6      		in __tmp_reg__,__SREG__
+ 344 020a F894      		cli
+ 345 020c DEBF      		out __SP_H__,r29
+ 346 020e 0FBE      		out __SREG__,__tmp_reg__
+ 347 0210 CDBF      		out __SP_L__,r28
+ 348               	/* prologue: function */
+ 349               	/* frame size = 40 */
+ 350 0212 29A3      		std Y+33,r18
+ 351 0214 3AA3      		std Y+34,r19
+ 352 0216 4BA3      		std Y+35,r20
+ 353 0218 5CA3      		std Y+36,r21
+ 354 021a 6DA3      		std Y+37,r22
+ 355 021c 7EA3      		std Y+38,r23
+ 356 021e 8FA3      		std Y+39,r24
+ 357 0220 98A7      		std Y+40,r25
+ 358               	.LM43:
+ 359 0222 E9A0      		ldd r14,Y+33
+ 360 0224 FAA0      		ldd r15,Y+34
+ 361 0226 CBA0      		ldd r12,Y+35
+ 362 0228 DCA0      		ldd r13,Y+36
+ 363 022a ADA0      		ldd r10,Y+37
+ 364 022c BEA0      		ldd r11,Y+38
+ 365 022e 8FA0      		ldd r8,Y+39
+ 366 0230 98A4      		ldd r9,Y+40
+ 367               	.LM44:
+ 368 0232 2E2D      		mov r18,r14
+ 369 0234 FA82      		std Y+2,r15
+ 370 0236 E982      		std Y+1,r14
+ 371 0238 4C2D      		mov r20,r12
+ 372 023a DC82      		std Y+4,r13
+ 373 023c CB82      		std Y+3,r12
+ 374 023e 6A2D      		mov r22,r10
+ 375 0240 BE82      		std Y+6,r11
+ 376 0242 AD82      		std Y+5,r10
+ 377 0244 C501      		movw r24,r10
+ 378 0246 0196      		adiw r24,1
+ 379 0248 9887      		std Y+8,r25
+ 380 024a 8F83      		std Y+7,r24
+ 381               	.LM45:
+ 382 024c 3A81      		ldd r19,Y+2
+ 383 024e 5C81      		ldd r21,Y+4
+ 384 0250 7E81      		ldd r23,Y+6
+ 385 0252 9885      		ldd r25,Y+8
+ 386 0254 0E94 0000 		call fill_rectangle
+ 387               	.LM46:
+ 388 0258 2E2D      		mov r18,r14
+ 389 025a FA86      		std Y+10,r15
+ 390 025c E986      		std Y+9,r14
+ 391 025e 4C2D      		mov r20,r12
+ 392 0260 DC86      		std Y+12,r13
+ 393 0262 CB86      		std Y+11,r12
+ 394 0264 C401      		movw r24,r8
+ 395 0266 0197      		sbiw r24,1
+ 396 0268 682F      		mov r22,r24
+ 397 026a 9E87      		std Y+14,r25
+ 398 026c 8D87      		std Y+13,r24
+ 399 026e 988A      		std Y+16,r9
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 8
+
+
+ 400 0270 8F86      		std Y+15,r8
+ 401               	.LM47:
+ 402 0272 3A85      		ldd r19,Y+10
+ 403 0274 5C85      		ldd r21,Y+12
+ 404 0276 7E85      		ldd r23,Y+14
+ 405 0278 882D      		mov r24,r8
+ 406 027a 9889      		ldd r25,Y+16
+ 407 027c 0E94 0000 		call fill_rectangle
+ 408               	.LM48:
+ 409 0280 2E2D      		mov r18,r14
+ 410 0282 FA8A      		std Y+18,r15
+ 411 0284 E98A      		std Y+17,r14
+ 412 0286 0894      		sec
+ 413 0288 E11C      		adc r14,__zero_reg__
+ 414 028a F11C      		adc r15,__zero_reg__
+ 415 028c 4E2D      		mov r20,r14
+ 416 028e FC8A      		std Y+20,r15
+ 417 0290 EB8A      		std Y+19,r14
+ 418 0292 6A2D      		mov r22,r10
+ 419 0294 BE8A      		std Y+22,r11
+ 420 0296 AD8A      		std Y+21,r10
+ 421 0298 988E      		std Y+24,r9
+ 422 029a 8F8A      		std Y+23,r8
+ 423               	.LM49:
+ 424 029c 3A89      		ldd r19,Y+18
+ 425 029e 5C89      		ldd r21,Y+20
+ 426 02a0 7E89      		ldd r23,Y+22
+ 427 02a2 882D      		mov r24,r8
+ 428 02a4 988D      		ldd r25,Y+24
+ 429 02a6 0E94 0000 		call fill_rectangle
+ 430               	.LM50:
+ 431 02aa C601      		movw r24,r12
+ 432 02ac 0197      		sbiw r24,1
+ 433 02ae 282F      		mov r18,r24
+ 434 02b0 9A8F      		std Y+26,r25
+ 435 02b2 898F      		std Y+25,r24
+ 436 02b4 4C2D      		mov r20,r12
+ 437 02b6 DC8E      		std Y+28,r13
+ 438 02b8 CB8E      		std Y+27,r12
+ 439 02ba 6A2D      		mov r22,r10
+ 440 02bc BE8E      		std Y+30,r11
+ 441 02be AD8E      		std Y+29,r10
+ 442 02c0 98A2      		std Y+32,r9
+ 443 02c2 8F8E      		std Y+31,r8
+ 444               	.LM51:
+ 445 02c4 3A8D      		ldd r19,Y+26
+ 446 02c6 5C8D      		ldd r21,Y+28
+ 447 02c8 7E8D      		ldd r23,Y+30
+ 448 02ca 882D      		mov r24,r8
+ 449 02cc 98A1      		ldd r25,Y+32
+ 450 02ce 0E94 0000 		call fill_rectangle
+ 451               	/* epilogue start */
+ 452               	.LM52:
+ 453 02d2 A896      		adiw r28,40
+ 454 02d4 0FB6      		in __tmp_reg__,__SREG__
+ 455 02d6 F894      		cli
+ 456 02d8 DEBF      		out __SP_H__,r29
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 9
+
+
+ 457 02da 0FBE      		out __SREG__,__tmp_reg__
+ 458 02dc CDBF      		out __SP_L__,r28
+ 459 02de CF91      		pop r28
+ 460 02e0 DF91      		pop r29
+ 461 02e2 1F91      		pop r17
+ 462 02e4 0F91      		pop r16
+ 463 02e6 FF90      		pop r15
+ 464 02e8 EF90      		pop r14
+ 465 02ea DF90      		pop r13
+ 466 02ec CF90      		pop r12
+ 467 02ee BF90      		pop r11
+ 468 02f0 AF90      		pop r10
+ 469 02f2 9F90      		pop r9
+ 470 02f4 8F90      		pop r8
+ 471 02f6 7F90      		pop r7
+ 472 02f8 6F90      		pop r6
+ 473 02fa 0895      		ret
+ 474               	.LFE4:
+ 475               		.size	draw_rectangle, .-draw_rectangle
+ 476               	.global	fill_rectangle_indexed
+ 477               		.type	fill_rectangle_indexed, @function
+ 478               	fill_rectangle_indexed:
+ 479               	.LFB6:
+ 480               	.LM53:
+ 481               	.LVL16:
+ 482 02fc EF92      		push r14
+ 483 02fe FF92      		push r15
+ 484 0300 0F93      		push r16
+ 485               	.LVL17:
+ 486 0302 1F93      		push r17
+ 487 0304 DF93      		push r29
+ 488 0306 CF93      		push r28
+ 489 0308 CDB7      		in r28,__SP_L__
+ 490 030a DEB7      		in r29,__SP_H__
+ 491 030c 2897      		sbiw r28,8
+ 492 030e 0FB6      		in __tmp_reg__,__SREG__
+ 493 0310 F894      		cli
+ 494 0312 DEBF      		out __SP_H__,r29
+ 495 0314 0FBE      		out __SREG__,__tmp_reg__
+ 496 0316 CDBF      		out __SP_L__,r28
+ 497               	/* prologue: function */
+ 498               	/* frame size = 8 */
+ 499 0318 F22F      		mov r31,r18
+ 500 031a 2983      		std Y+1,r18
+ 501 031c E32F      		mov r30,r19
+ 502 031e 3A83      		std Y+2,r19
+ 503 0320 4B83      		std Y+3,r20
+ 504 0322 5C83      		std Y+4,r21
+ 505 0324 362F      		mov r19,r22
+ 506 0326 6D83      		std Y+5,r22
+ 507 0328 272F      		mov r18,r23
+ 508 032a 7E83      		std Y+6,r23
+ 509 032c 8F83      		std Y+7,r24
+ 510 032e 9887      		std Y+8,r25
+ 511 0330 D801      		movw r26,r16
+ 512               	.LVL18:
+ 513               	.LM54:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 10
+
+
+ 514 0332 0B81      		ldd r16,Y+3
+ 515 0334 1C81      		ldd r17,Y+4
+ 516               	.LVL19:
+ 517 0336 E62E      		mov r14,r22
+ 518 0338 F72E      		mov r15,r23
+ 519 033a 6F81      		ldd r22,Y+7
+ 520 033c 7885      		ldd r23,Y+8
+ 521               	.LM55:
+ 522 033e 1498      		cbi 34-32,4
+ 523 0340 8AE2      		ldi r24,lo8(42)
+ 524 0342 88B9      		out 40-32,r24
+ 525 0344 1398      		cbi 34-32,3
+ 526 0346 139A      		sbi 34-32,3
+ 527 0348 149A      		sbi 34-32,4
+ 528               	.LM56:
+ 529 034a E8B9      		out 40-32,r30
+ 530 034c 1398      		cbi 34-32,3
+ 531 034e 139A      		sbi 34-32,3
+ 532 0350 F8B9      		out 40-32,r31
+ 533 0352 1398      		cbi 34-32,3
+ 534 0354 139A      		sbi 34-32,3
+ 535               	.LM57:
+ 536 0356 18B9      		out 40-32,r17
+ 537 0358 1398      		cbi 34-32,3
+ 538 035a 139A      		sbi 34-32,3
+ 539 035c 08B9      		out 40-32,r16
+ 540 035e 1398      		cbi 34-32,3
+ 541 0360 139A      		sbi 34-32,3
+ 542               	.LM58:
+ 543 0362 1498      		cbi 34-32,4
+ 544 0364 8BE2      		ldi r24,lo8(43)
+ 545 0366 88B9      		out 40-32,r24
+ 546 0368 1398      		cbi 34-32,3
+ 547 036a 139A      		sbi 34-32,3
+ 548 036c 149A      		sbi 34-32,4
+ 549               	.LM59:
+ 550 036e 28B9      		out 40-32,r18
+ 551 0370 1398      		cbi 34-32,3
+ 552 0372 139A      		sbi 34-32,3
+ 553 0374 38B9      		out 40-32,r19
+ 554 0376 1398      		cbi 34-32,3
+ 555 0378 139A      		sbi 34-32,3
+ 556               	.LM60:
+ 557 037a 78B9      		out 40-32,r23
+ 558 037c 1398      		cbi 34-32,3
+ 559 037e 139A      		sbi 34-32,3
+ 560 0380 68B9      		out 40-32,r22
+ 561 0382 1398      		cbi 34-32,3
+ 562 0384 139A      		sbi 34-32,3
+ 563               	.LM61:
+ 564 0386 1498      		cbi 34-32,4
+ 565 0388 8CE2      		ldi r24,lo8(44)
+ 566 038a 88B9      		out 40-32,r24
+ 567 038c 1398      		cbi 34-32,3
+ 568 038e 139A      		sbi 34-32,3
+ 569 0390 149A      		sbi 34-32,4
+ 570 0392 2F2F      		mov r18,r31
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 11
+
+
+ 571               	.LVL20:
+ 572 0394 3E2F      		mov r19,r30
+ 573               	.LVL21:
+ 574 0396 C901      		movw r24,r18
+ 575               	.LVL22:
+ 576 0398 AC01      		movw r20,r24
+ 577               	.LVL23:
+ 578 039a 00C0      		rjmp .L17
+ 579               	.LVL24:
+ 580               	.L18:
+ 581               	.LM62:
+ 582 039c 1196      		adiw r26,1
+ 583 039e 8C91      		ld r24,X
+ 584 03a0 1197      		sbiw r26,1
+ 585 03a2 88B9      		out 40-32,r24
+ 586 03a4 1398      		cbi 34-32,3
+ 587 03a6 139A      		sbi 34-32,3
+ 588 03a8 1296      		adiw r26,2
+ 589 03aa 8C91      		ld r24,X
+ 590 03ac 1297      		sbiw r26,2
+ 591 03ae 88B9      		out 40-32,r24
+ 592               	.LM63:
+ 593 03b0 1496      		adiw r26,4
+ 594               	.LM64:
+ 595 03b2 1398      		cbi 34-32,3
+ 596 03b4 139A      		sbi 34-32,3
+ 597               	.LM65:
+ 598 03b6 2F5F      		subi r18,lo8(-(1))
+ 599 03b8 3F4F      		sbci r19,hi8(-(1))
+ 600               	.LVL25:
+ 601               	.L20:
+ 602 03ba 6217      		cp r22,r18
+ 603 03bc 7307      		cpc r23,r19
+ 604 03be 00F4      		brsh .L18
+ 605               	.LM66:
+ 606 03c0 4F5F      		subi r20,lo8(-(1))
+ 607 03c2 5F4F      		sbci r21,hi8(-(1))
+ 608               	.LVL26:
+ 609               	.L17:
+ 610 03c4 0417      		cp r16,r20
+ 611 03c6 1507      		cpc r17,r21
+ 612 03c8 00F0      		brlo .L21
+ 613 03ca 9701      		movw r18,r14
+ 614               	.LVL27:
+ 615 03cc 00C0      		rjmp .L20
+ 616               	.LVL28:
+ 617               	.L21:
+ 618               	/* epilogue start */
+ 619               	.LM67:
+ 620 03ce 2896      		adiw r28,8
+ 621 03d0 0FB6      		in __tmp_reg__,__SREG__
+ 622 03d2 F894      		cli
+ 623 03d4 DEBF      		out __SP_H__,r29
+ 624 03d6 0FBE      		out __SREG__,__tmp_reg__
+ 625 03d8 CDBF      		out __SP_L__,r28
+ 626 03da CF91      		pop r28
+ 627 03dc DF91      		pop r29
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 12
+
+
+ 628 03de 1F91      		pop r17
+ 629 03e0 0F91      		pop r16
+ 630 03e2 FF90      		pop r15
+ 631 03e4 EF90      		pop r14
+ 632 03e6 0895      		ret
+ 633               	.LFE6:
+ 634               		.size	fill_rectangle_indexed, .-fill_rectangle_indexed
+ 635               	.global	clear_screen
+ 636               		.type	clear_screen, @function
+ 637               	clear_screen:
+ 638               	.LFB7:
+ 639               	.LM68:
+ 640 03e8 0F93      		push r16
+ 641 03ea 1F93      		push r17
+ 642 03ec DF93      		push r29
+ 643 03ee CF93      		push r28
+ 644 03f0 CDB7      		in r28,__SP_L__
+ 645 03f2 DEB7      		in r29,__SP_H__
+ 646 03f4 2897      		sbiw r28,8
+ 647 03f6 0FB6      		in __tmp_reg__,__SREG__
+ 648 03f8 F894      		cli
+ 649 03fa DEBF      		out __SP_H__,r29
+ 650 03fc 0FBE      		out __SREG__,__tmp_reg__
+ 651 03fe CDBF      		out __SP_L__,r28
+ 652               	/* prologue: function */
+ 653               	/* frame size = 8 */
+ 654               	.LM69:
+ 655 0400 1092 0000 		sts (display+6)+1,__zero_reg__
+ 656 0404 1092 0000 		sts display+6,__zero_reg__
+ 657               	.LM70:
+ 658 0408 1092 0000 		sts (display+8)+1,__zero_reg__
+ 659 040c 1092 0000 		sts display+8,__zero_reg__
+ 660               	.LM71:
+ 661 0410 2091 0000 		lds r18,display
+ 662 0414 3091 0000 		lds r19,(display)+1
+ 663 0418 2150      		subi r18,lo8(-(-1))
+ 664 041a 3040      		sbci r19,hi8(-(-1))
+ 665 041c 8091 0000 		lds r24,display+2
+ 666 0420 9091 0000 		lds r25,(display+2)+1
+ 667 0424 0197      		sbiw r24,1
+ 668 0426 1A82      		std Y+2,__zero_reg__
+ 669 0428 1982      		std Y+1,__zero_reg__
+ 670 042a 422F      		mov r20,r18
+ 671 042c 3C83      		std Y+4,r19
+ 672 042e 2B83      		std Y+3,r18
+ 673 0430 1E82      		std Y+6,__zero_reg__
+ 674 0432 1D82      		std Y+5,__zero_reg__
+ 675 0434 9887      		std Y+8,r25
+ 676 0436 8F83      		std Y+7,r24
+ 677               	.LM72:
+ 678 0438 0091 0000 		lds r16,display+12
+ 679 043c 1091 0000 		lds r17,(display+12)+1
+ 680 0440 2981      		ldd r18,Y+1
+ 681 0442 3A81      		ldd r19,Y+2
+ 682 0444 5C81      		ldd r21,Y+4
+ 683 0446 6D81      		ldd r22,Y+5
+ 684 0448 7E81      		ldd r23,Y+6
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 13
+
+
+ 685 044a 9885      		ldd r25,Y+8
+ 686 044c 0E94 0000 		call fill_rectangle
+ 687               	/* epilogue start */
+ 688               	.LM73:
+ 689 0450 2896      		adiw r28,8
+ 690 0452 0FB6      		in __tmp_reg__,__SREG__
+ 691 0454 F894      		cli
+ 692 0456 DEBF      		out __SP_H__,r29
+ 693 0458 0FBE      		out __SREG__,__tmp_reg__
+ 694 045a CDBF      		out __SP_L__,r28
+ 695 045c CF91      		pop r28
+ 696 045e DF91      		pop r29
+ 697 0460 1F91      		pop r17
+ 698 0462 0F91      		pop r16
+ 699 0464 0895      		ret
+ 700               	.LFE7:
+ 701               		.size	clear_screen, .-clear_screen
+ 702               	.global	display_char
+ 703               		.type	display_char, @function
+ 704               	display_char:
+ 705               	.LFB8:
+ 706               	.LM74:
+ 707               	.LVL29:
+ 708 0466 6F92      		push r6
+ 709 0468 7F92      		push r7
+ 710 046a 8F92      		push r8
+ 711 046c 9F92      		push r9
+ 712 046e AF92      		push r10
+ 713 0470 BF92      		push r11
+ 714 0472 CF92      		push r12
+ 715 0474 DF92      		push r13
+ 716 0476 EF92      		push r14
+ 717 0478 FF92      		push r15
+ 718 047a 0F93      		push r16
+ 719 047c 1F93      		push r17
+ 720 047e CF93      		push r28
+ 721 0480 DF93      		push r29
+ 722               	/* prologue: function */
+ 723               	/* frame size = 0 */
+ 724 0482 982F      		mov r25,r24
+ 725               	.LM75:
+ 726 0484 0091 0000 		lds r16,display+6
+ 727 0488 1091 0000 		lds r17,(display+6)+1
+ 728               	.LVL30:
+ 729 048c 24E0      		ldi r18,lo8(4)
+ 730 048e E22E      		mov r14,r18
+ 731 0490 F12C      		mov r15,__zero_reg__
+ 732               	.LVL31:
+ 733 0492 E00E      		add r14,r16
+ 734 0494 F11E      		adc r15,r17
+ 735 0496 6090 0000 		lds r6,display+8
+ 736 049a 7090 0000 		lds r7,(display+8)+1
+ 737               	.LVL32:
+ 738               	.LM76:
+ 739 049e 8A30      		cpi r24,lo8(10)
+ 740 04a0 01F4      		brne .L25
+ 741               	.LM77:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 14
+
+
+ 742 04a2 1092 0000 		sts (display+6)+1,__zero_reg__
+ 743 04a6 1092 0000 		sts display+6,__zero_reg__
+ 744 04aa 9301      		movw r18,r6
+ 745 04ac 285F      		subi r18,lo8(-(8))
+ 746 04ae 3F4F      		sbci r19,hi8(-(8))
+ 747 04b0 3093 0000 		sts (display+8)+1,r19
+ 748 04b4 2093 0000 		sts display+8,r18
+ 749               	.LM78:
+ 750 04b8 8091 0000 		lds r24,display+2
+ 751 04bc 9091 0000 		lds r25,(display+2)+1
+ 752               	.LVL33:
+ 753 04c0 2817      		cp r18,r24
+ 754 04c2 3907      		cpc r19,r25
+ 755 04c4 00F4      		brsh .+2
+ 756 04c6 00C0      		rjmp .L37
+ 757 04c8 0E94 0000 		call clear_screen
+ 758               	.LVL34:
+ 759 04cc 00C0      		rjmp .L37
+ 760               	.LVL35:
+ 761               	.L25:
+ 762               	.LM79:
+ 763 04ce 8052      		subi r24,lo8(-(-32))
+ 764               	.LVL36:
+ 765 04d0 8F35      		cpi r24,lo8(95)
+ 766 04d2 00F0      		brlo .+2
+ 767 04d4 00C0      		rjmp .L37
+ 768               	.LM80:
+ 769 04d6 E301      		movw r28,r6
+ 770               	.LVL37:
+ 771 04d8 2796      		adiw r28,7
+ 772               	.LM81:
+ 773 04da 85E0      		ldi r24,lo8(5)
+ 774 04dc 989F      		mul r25,r24
+ 775 04de 9001      		movw r18,r0
+ 776 04e0 1124      		clr r1
+ 777               	.LVL38:
+ 778 04e2 2050      		subi r18,lo8(-(font5x7-160))
+ 779 04e4 3040      		sbci r19,hi8(-(font5x7-160))
+ 780               	.LM82:
+ 781 04e6 1498      		cbi 34-32,4
+ 782 04e8 8BE2      		ldi r24,lo8(43)
+ 783 04ea 88B9      		out 40-32,r24
+ 784 04ec 1398      		cbi 34-32,3
+ 785 04ee 139A      		sbi 34-32,3
+ 786 04f0 149A      		sbi 34-32,4
+ 787               	.LM83:
+ 788 04f2 78B8      		out 40-32,r7
+ 789               	.LVL39:
+ 790 04f4 1398      		cbi 34-32,3
+ 791 04f6 139A      		sbi 34-32,3
+ 792 04f8 68B8      		out 40-32,r6
+ 793 04fa 1398      		cbi 34-32,3
+ 794 04fc 139A      		sbi 34-32,3
+ 795               	.LM84:
+ 796 04fe D8B9      		out 40-32,r29
+ 797               	.LVL40:
+ 798 0500 1398      		cbi 34-32,3
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 15
+
+
+ 799 0502 139A      		sbi 34-32,3
+ 800 0504 C8B9      		out 40-32,r28
+ 801 0506 1398      		cbi 34-32,3
+ 802 0508 139A      		sbi 34-32,3
+ 803               	.LM85:
+ 804 050a C090 0000 		lds r12,display+10
+ 805 050e D090 0000 		lds r13,display+11
+ 806 0512 A090 0000 		lds r10,display+12
+ 807 0516 B090 0000 		lds r11,display+13
+ 808 051a A801      		movw r20,r16
+ 809               	.LVL41:
+ 810               	.LM86:
+ 811 051c 9AE2      		ldi r25,lo8(42)
+ 812 051e 892E      		mov r8,r25
+ 813               	.LVL42:
+ 814               	.LM87:
+ 815 0520 8CE2      		ldi r24,lo8(44)
+ 816 0522 982E      		mov r9,r24
+ 817 0524 00C0      		rjmp .L27
+ 818               	.LVL43:
+ 819               	.L34:
+ 820               	.LM88:
+ 821 0526 1498      		cbi 34-32,4
+ 822 0528 88B8      		out 40-32,r8
+ 823 052a 1398      		cbi 34-32,3
+ 824 052c 139A      		sbi 34-32,3
+ 825 052e 149A      		sbi 34-32,4
+ 826               	.LM89:
+ 827 0530 58B9      		out 40-32,r21
+ 828 0532 1398      		cbi 34-32,3
+ 829 0534 139A      		sbi 34-32,3
+ 830 0536 48B9      		out 40-32,r20
+ 831 0538 1398      		cbi 34-32,3
+ 832 053a 139A      		sbi 34-32,3
+ 833               	.LM90:
+ 834 053c 58B9      		out 40-32,r21
+ 835 053e 1398      		cbi 34-32,3
+ 836 0540 139A      		sbi 34-32,3
+ 837 0542 48B9      		out 40-32,r20
+ 838 0544 1398      		cbi 34-32,3
+ 839 0546 139A      		sbi 34-32,3
+ 840               	.LM91:
+ 841 0548 1498      		cbi 34-32,4
+ 842 054a 98B8      		out 40-32,r9
+ 843 054c 1398      		cbi 34-32,3
+ 844 054e 139A      		sbi 34-32,3
+ 845 0550 149A      		sbi 34-32,4
+ 846               	.LBB2:
+ 847               	.LM92:
+ 848 0552 F901      		movw r30,r18
+ 849               	/* #APP */
+ 850               	 ;  137 "lcd.c" 1
+ 851 0554 B491      		lpm r27, Z
+ 852               		
+ 853               	 ;  0 "" 2
+ 854               	/* #NOAPP */
+ 855 0556 B301      		movw r22,r6
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 16
+
+
+ 856 0558 91E0      		ldi r25,lo8(1)
+ 857 055a 00C0      		rjmp .L28
+ 858               	.L33:
+ 859               	.LBE2:
+ 860               	.LM93:
+ 861 055c A92F      		mov r26,r25
+ 862 055e AB23      		and r26,r27
+ 863 0560 01F4      		brne .L29
+ 864 0562 8B2D      		mov r24,r11
+ 865 0564 00C0      		rjmp .L30
+ 866               	.L29:
+ 867 0566 8D2D      		mov r24,r13
+ 868               	.L30:
+ 869 0568 88B9      		out 40-32,r24
+ 870 056a 1398      		cbi 34-32,3
+ 871 056c 139A      		sbi 34-32,3
+ 872 056e AA23      		tst r26
+ 873 0570 01F4      		brne .L31
+ 874 0572 8A2D      		mov r24,r10
+ 875 0574 00C0      		rjmp .L32
+ 876               	.L31:
+ 877 0576 8C2D      		mov r24,r12
+ 878               	.L32:
+ 879 0578 88B9      		out 40-32,r24
+ 880 057a 1398      		cbi 34-32,3
+ 881 057c 139A      		sbi 34-32,3
+ 882               	.LM94:
+ 883 057e 6F5F      		subi r22,lo8(-(1))
+ 884 0580 7F4F      		sbci r23,hi8(-(1))
+ 885 0582 990F      		lsl r25
+ 886               	.L28:
+ 887 0584 C617      		cp r28,r22
+ 888 0586 D707      		cpc r29,r23
+ 889 0588 00F4      		brsh .L33
+ 890               	.LBB3:
+ 891               	.LM95:
+ 892 058a 2F5F      		subi r18,lo8(-(1))
+ 893 058c 3F4F      		sbci r19,hi8(-(1))
+ 894               	.LBE3:
+ 895               	.LM96:
+ 896 058e 4F5F      		subi r20,lo8(-(1))
+ 897 0590 5F4F      		sbci r21,hi8(-(1))
+ 898               	.L27:
+ 899 0592 E416      		cp r14,r20
+ 900 0594 F506      		cpc r15,r21
+ 901 0596 00F4      		brsh .L34
+ 902               	.LM97:
+ 903 0598 1498      		cbi 34-32,4
+ 904 059a 8AE2      		ldi r24,lo8(42)
+ 905 059c 88B9      		out 40-32,r24
+ 906 059e 1398      		cbi 34-32,3
+ 907 05a0 139A      		sbi 34-32,3
+ 908 05a2 149A      		sbi 34-32,4
+ 909               	.LM98:
+ 910 05a4 58B9      		out 40-32,r21
+ 911 05a6 1398      		cbi 34-32,3
+ 912 05a8 139A      		sbi 34-32,3
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 17
+
+
+ 913 05aa 48B9      		out 40-32,r20
+ 914 05ac 1398      		cbi 34-32,3
+ 915 05ae 139A      		sbi 34-32,3
+ 916               	.LM99:
+ 917 05b0 58B9      		out 40-32,r21
+ 918 05b2 1398      		cbi 34-32,3
+ 919 05b4 139A      		sbi 34-32,3
+ 920 05b6 48B9      		out 40-32,r20
+ 921 05b8 1398      		cbi 34-32,3
+ 922 05ba 139A      		sbi 34-32,3
+ 923               	.LM100:
+ 924 05bc 1498      		cbi 34-32,4
+ 925 05be 8CE2      		ldi r24,lo8(44)
+ 926 05c0 88B9      		out 40-32,r24
+ 927 05c2 1398      		cbi 34-32,3
+ 928 05c4 139A      		sbi 34-32,3
+ 929 05c6 149A      		sbi 34-32,4
+ 930 05c8 C301      		movw r24,r6
+ 931               	.LVL44:
+ 932 05ca 00C0      		rjmp .L35
+ 933               	.L36:
+ 934               	.LM101:
+ 935 05cc B8B8      		out 40-32,r11
+ 936 05ce 1398      		cbi 34-32,3
+ 937 05d0 139A      		sbi 34-32,3
+ 938 05d2 A8B8      		out 40-32,r10
+ 939 05d4 1398      		cbi 34-32,3
+ 940 05d6 139A      		sbi 34-32,3
+ 941               	.LM102:
+ 942 05d8 0196      		adiw r24,1
+ 943               	.L35:
+ 944 05da C817      		cp r28,r24
+ 945 05dc D907      		cpc r29,r25
+ 946 05de 00F4      		brsh .L36
+ 947               	.LM103:
+ 948 05e0 9801      		movw r18,r16
+ 949               	.LVL45:
+ 950 05e2 2A5F      		subi r18,lo8(-(6))
+ 951 05e4 3F4F      		sbci r19,hi8(-(6))
+ 952 05e6 3093 0000 		sts (display+6)+1,r19
+ 953 05ea 2093 0000 		sts display+6,r18
+ 954               	.LM104:
+ 955 05ee 8091 0000 		lds r24,display
+ 956 05f2 9091 0000 		lds r25,(display)+1
+ 957               	.LVL46:
+ 958 05f6 2817      		cp r18,r24
+ 959 05f8 3907      		cpc r19,r25
+ 960 05fa 00F0      		brlo .L37
+ 961 05fc 1092 0000 		sts (display+6)+1,__zero_reg__
+ 962 0600 1092 0000 		sts display+6,__zero_reg__
+ 963 0604 88E0      		ldi r24,lo8(8)
+ 964 0606 90E0      		ldi r25,hi8(8)
+ 965 0608 680E      		add r6,r24
+ 966 060a 791E      		adc r7,r25
+ 967 060c 7092 0000 		sts (display+8)+1,r7
+ 968 0610 6092 0000 		sts display+8,r6
+ 969               	.LVL47:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 18
+
+
+ 970               	.L37:
+ 971               	/* epilogue start */
+ 972               	.LM105:
+ 973 0614 DF91      		pop r29
+ 974               	.LVL48:
+ 975 0616 CF91      		pop r28
+ 976               	.LVL49:
+ 977 0618 1F91      		pop r17
+ 978 061a 0F91      		pop r16
+ 979               	.LVL50:
+ 980 061c FF90      		pop r15
+ 981 061e EF90      		pop r14
+ 982               	.LVL51:
+ 983 0620 DF90      		pop r13
+ 984 0622 CF90      		pop r12
+ 985 0624 BF90      		pop r11
+ 986 0626 AF90      		pop r10
+ 987 0628 9F90      		pop r9
+ 988 062a 8F90      		pop r8
+ 989 062c 7F90      		pop r7
+ 990               	.LVL52:
+ 991 062e 6F90      		pop r6
+ 992               	.LVL53:
+ 993 0630 0895      		ret
+ 994               	.LFE8:
+ 995               		.size	display_char, .-display_char
+ 996               	.global	display_string
+ 997               		.type	display_string, @function
+ 998               	display_string:
+ 999               	.LFB9:
+ 1000               	.LM106:
+ 1001               	.LVL54:
+ 1002 0632 1F93      		push r17
+ 1003 0634 CF93      		push r28
+ 1004 0636 DF93      		push r29
+ 1005               	/* prologue: function */
+ 1006               	/* frame size = 0 */
+ 1007 0638 EC01      		movw r28,r24
+ 1008               	.LM107:
+ 1009 063a 10E0      		ldi r17,lo8(0)
+ 1010               	.LVL55:
+ 1011 063c 00C0      		rjmp .L39
+ 1012               	.LVL56:
+ 1013               	.L40:
+ 1014               	.LM108:
+ 1015 063e 0E94 0000 		call display_char
+ 1016               	.LM109:
+ 1017 0642 1F5F      		subi r17,lo8(-(1))
+ 1018               	.LVL57:
+ 1019               	.L39:
+ 1020 0644 FE01      		movw r30,r28
+ 1021 0646 E10F      		add r30,r17
+ 1022 0648 F11D      		adc r31,__zero_reg__
+ 1023 064a 8081      		ld r24,Z
+ 1024 064c 8823      		tst r24
+ 1025 064e 01F4      		brne .L40
+ 1026               	/* epilogue start */
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 19
+
+
+ 1027               	.LM110:
+ 1028 0650 DF91      		pop r29
+ 1029 0652 CF91      		pop r28
+ 1030               	.LVL58:
+ 1031 0654 1F91      		pop r17
+ 1032               	.LVL59:
+ 1033 0656 0895      		ret
+ 1034               	.LFE9:
+ 1035               		.size	display_string, .-display_string
+ 1036               	.global	init_lcd
+ 1037               		.type	init_lcd, @function
+ 1038               	init_lcd:
+ 1039               	.LFB2:
+ 1040               	.LM111:
+ 1041               	/* prologue: function */
+ 1042               	/* frame size = 0 */
+ 1043               	.LM112:
+ 1044 0658 85B7      		in r24,85-32
+ 1045 065a 8068      		ori r24,lo8(-128)
+ 1046 065c 85BF      		out 85-32,r24
+ 1047               	.LM113:
+ 1048 065e 85B7      		in r24,85-32
+ 1049 0660 8068      		ori r24,lo8(-128)
+ 1050 0662 85BF      		out 85-32,r24
+ 1051               	.LM114:
+ 1052 0664 8FE7      		ldi r24,lo8(127)
+ 1053 0666 81B9      		out 33-32,r24
+ 1054               	.LM115:
+ 1055 0668 8FEF      		ldi r24,lo8(-1)
+ 1056 066a 87B9      		out 39-32,r24
+ 1057               	.LM116:
+ 1058 066c 0E94 0000 		call init_display_controller
+ 1059               	/* epilogue start */
+ 1060               	.LM117:
+ 1061 0670 0895      		ret
+ 1062               	.LFE2:
+ 1063               		.size	init_lcd, .-init_lcd
+ 1064               	.global	display
+ 1065               		.data
+ 1066               		.type	display, @object
+ 1067               		.size	display, 14
+ 1068               	display:
+ 1069 0000 F000      		.word	240
+ 1070 0002 4001      		.word	320
+ 1071 0004 0000      		.word	0
+ 1072 0006 0000      		.word	0
+ 1073 0008 0000      		.word	0
+ 1074 000a FFFF      		.word	-1
+ 1075 000c 0000      		.word	0
+ 1076               		.section	.debug_frame,"",@progbits
+ 1077               	.Lframe0:
+ 1078 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 1079               	.LSCIE0:
+ 1080 0004 FFFF FFFF 		.long	0xffffffff
+ 1081 0008 01        		.byte	0x1
+ 1082 0009 00        		.string	""
+ 1083 000a 01        		.uleb128 0x1
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 20
+
+
+ 1084 000b 7F        		.sleb128 -1
+ 1085 000c 24        		.byte	0x24
+ 1086 000d 0C        		.byte	0xc
+ 1087 000e 20        		.uleb128 0x20
+ 1088 000f 00        		.uleb128 0x0
+ 1089               		.p2align	2
+ 1090               	.LECIE0:
+ 1091               	.LSFDE0:
+ 1092 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 1093               	.LASFDE0:
+ 1094 0014 0000 0000 		.long	.Lframe0
+ 1095 0018 0000 0000 		.long	.LFB3
+ 1096 001c 0801 0000 		.long	.LFE3-.LFB3
+ 1097               		.p2align	2
+ 1098               	.LEFDE0:
+ 1099               	.LSFDE2:
+ 1100 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 1101               	.LASFDE2:
+ 1102 0024 0000 0000 		.long	.Lframe0
+ 1103 0028 0000 0000 		.long	.LFB5
+ 1104 002c DE00 0000 		.long	.LFE5-.LFB5
+ 1105               		.p2align	2
+ 1106               	.LEFDE2:
+ 1107               	.LSFDE4:
+ 1108 0030 0C00 0000 		.long	.LEFDE4-.LASFDE4
+ 1109               	.LASFDE4:
+ 1110 0034 0000 0000 		.long	.Lframe0
+ 1111 0038 0000 0000 		.long	.LFB4
+ 1112 003c 1601 0000 		.long	.LFE4-.LFB4
+ 1113               		.p2align	2
+ 1114               	.LEFDE4:
+ 1115               	.LSFDE6:
+ 1116 0040 0C00 0000 		.long	.LEFDE6-.LASFDE6
+ 1117               	.LASFDE6:
+ 1118 0044 0000 0000 		.long	.Lframe0
+ 1119 0048 0000 0000 		.long	.LFB6
+ 1120 004c EC00 0000 		.long	.LFE6-.LFB6
+ 1121               		.p2align	2
+ 1122               	.LEFDE6:
+ 1123               	.LSFDE8:
+ 1124 0050 0C00 0000 		.long	.LEFDE8-.LASFDE8
+ 1125               	.LASFDE8:
+ 1126 0054 0000 0000 		.long	.Lframe0
+ 1127 0058 0000 0000 		.long	.LFB7
+ 1128 005c 7E00 0000 		.long	.LFE7-.LFB7
+ 1129               		.p2align	2
+ 1130               	.LEFDE8:
+ 1131               	.LSFDE10:
+ 1132 0060 0C00 0000 		.long	.LEFDE10-.LASFDE10
+ 1133               	.LASFDE10:
+ 1134 0064 0000 0000 		.long	.Lframe0
+ 1135 0068 0000 0000 		.long	.LFB8
+ 1136 006c CC01 0000 		.long	.LFE8-.LFB8
+ 1137               		.p2align	2
+ 1138               	.LEFDE10:
+ 1139               	.LSFDE12:
+ 1140 0070 0C00 0000 		.long	.LEFDE12-.LASFDE12
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 21
+
+
+ 1141               	.LASFDE12:
+ 1142 0074 0000 0000 		.long	.Lframe0
+ 1143 0078 0000 0000 		.long	.LFB9
+ 1144 007c 2600 0000 		.long	.LFE9-.LFB9
+ 1145               		.p2align	2
+ 1146               	.LEFDE12:
+ 1147               	.LSFDE14:
+ 1148 0080 0C00 0000 		.long	.LEFDE14-.LASFDE14
+ 1149               	.LASFDE14:
+ 1150 0084 0000 0000 		.long	.Lframe0
+ 1151 0088 0000 0000 		.long	.LFB2
+ 1152 008c 1A00 0000 		.long	.LFE2-.LFB2
+ 1153               		.p2align	2
+ 1154               	.LEFDE14:
+ 1155               		.text
+ 1156               	.Letext0:
+ 1157               		.section	.debug_loc,"",@progbits
+ 1158               	.Ldebug_loc0:
+ 1159               	.LLST1:
+ 1160 0000 0000 0000 		.long	.LVL0-.Ltext0
+ 1161 0004 0E00 0000 		.long	.LVL1-.Ltext0
+ 1162 0008 0600      		.word	0x6
+ 1163 000a 68        		.byte	0x68
+ 1164 000b 93        		.byte	0x93
+ 1165 000c 01        		.uleb128 0x1
+ 1166 000d 69        		.byte	0x69
+ 1167 000e 93        		.byte	0x93
+ 1168 000f 01        		.uleb128 0x1
+ 1169 0010 0E00 0000 		.long	.LVL1-.Ltext0
+ 1170 0014 0801 0000 		.long	.LFE3-.Ltext0
+ 1171 0018 0600      		.word	0x6
+ 1172 001a 62        		.byte	0x62
+ 1173 001b 93        		.byte	0x93
+ 1174 001c 01        		.uleb128 0x1
+ 1175 001d 63        		.byte	0x63
+ 1176 001e 93        		.byte	0x93
+ 1177 001f 01        		.uleb128 0x1
+ 1178 0020 0000 0000 		.long	0x0
+ 1179 0024 0000 0000 		.long	0x0
+ 1180               	.LLST3:
+ 1181 0028 0801 0000 		.long	.LVL2-.Ltext0
+ 1182 002c 0E01 0000 		.long	.LVL3-.Ltext0
+ 1183 0030 0600      		.word	0x6
+ 1184 0032 60        		.byte	0x60
+ 1185 0033 93        		.byte	0x93
+ 1186 0034 01        		.uleb128 0x1
+ 1187 0035 61        		.byte	0x61
+ 1188 0036 93        		.byte	0x93
+ 1189 0037 01        		.uleb128 0x1
+ 1190 0038 A801 0000 		.long	.LVL8-.Ltext0
+ 1191 003c E201 0000 		.long	.LVL12-.Ltext0
+ 1192 0040 0600      		.word	0x6
+ 1193 0042 5E        		.byte	0x5e
+ 1194 0043 93        		.byte	0x93
+ 1195 0044 01        		.uleb128 0x1
+ 1196 0045 5F        		.byte	0x5f
+ 1197 0046 93        		.byte	0x93
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 22
+
+
+ 1198 0047 01        		.uleb128 0x1
+ 1199 0048 0000 0000 		.long	0x0
+ 1200 004c 0000 0000 		.long	0x0
+ 1201               	.LLST4:
+ 1202 0050 A201 0000 		.long	.LVL5-.Ltext0
+ 1203 0054 A401 0000 		.long	.LVL6-.Ltext0
+ 1204 0058 0600      		.word	0x6
+ 1205 005a 62        		.byte	0x62
+ 1206 005b 93        		.byte	0x93
+ 1207 005c 01        		.uleb128 0x1
+ 1208 005d 63        		.byte	0x63
+ 1209 005e 93        		.byte	0x93
+ 1210 005f 01        		.uleb128 0x1
+ 1211 0060 A601 0000 		.long	.LVL7-.Ltext0
+ 1212 0064 A801 0000 		.long	.LVL8-.Ltext0
+ 1213 0068 0600      		.word	0x6
+ 1214 006a 68        		.byte	0x68
+ 1215 006b 93        		.byte	0x93
+ 1216 006c 01        		.uleb128 0x1
+ 1217 006d 69        		.byte	0x69
+ 1218 006e 93        		.byte	0x93
+ 1219 006f 01        		.uleb128 0x1
+ 1220 0070 A801 0000 		.long	.LVL8-.Ltext0
+ 1221 0074 E601 0000 		.long	.LFE5-.Ltext0
+ 1222 0078 0600      		.word	0x6
+ 1223 007a 64        		.byte	0x64
+ 1224 007b 93        		.byte	0x93
+ 1225 007c 01        		.uleb128 0x1
+ 1226 007d 65        		.byte	0x65
+ 1227 007e 93        		.byte	0x93
+ 1228 007f 01        		.uleb128 0x1
+ 1229 0080 0000 0000 		.long	0x0
+ 1230 0084 0000 0000 		.long	0x0
+ 1231               	.LLST5:
+ 1232 0088 A801 0000 		.long	.LVL8-.Ltext0
+ 1233 008c CA01 0000 		.long	.LVL10-.Ltext0
+ 1234 0090 0600      		.word	0x6
+ 1235 0092 62        		.byte	0x62
+ 1236 0093 93        		.byte	0x93
+ 1237 0094 01        		.uleb128 0x1
+ 1238 0095 63        		.byte	0x63
+ 1239 0096 93        		.byte	0x93
+ 1240 0097 01        		.uleb128 0x1
+ 1241 0098 CC01 0000 		.long	.LVL11-.Ltext0
+ 1242 009c E601 0000 		.long	.LFE5-.Ltext0
+ 1243 00a0 0600      		.word	0x6
+ 1244 00a2 62        		.byte	0x62
+ 1245 00a3 93        		.byte	0x93
+ 1246 00a4 01        		.uleb128 0x1
+ 1247 00a5 63        		.byte	0x63
+ 1248 00a6 93        		.byte	0x93
+ 1249 00a7 01        		.uleb128 0x1
+ 1250 00a8 0000 0000 		.long	0x0
+ 1251 00ac 0000 0000 		.long	0x0
+ 1252               	.LLST7:
+ 1253 00b0 E601 0000 		.long	.LVL14-.Ltext0
+ 1254 00b4 FC01 0000 		.long	.LVL15-.Ltext0
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 23
+
+
+ 1255 00b8 0600      		.word	0x6
+ 1256 00ba 60        		.byte	0x60
+ 1257 00bb 93        		.byte	0x93
+ 1258 00bc 01        		.uleb128 0x1
+ 1259 00bd 61        		.byte	0x61
+ 1260 00be 93        		.byte	0x93
+ 1261 00bf 01        		.uleb128 0x1
+ 1262 00c0 0000 0000 		.long	0x0
+ 1263 00c4 0000 0000 		.long	0x0
+ 1264               	.LLST9:
+ 1265 00c8 FC02 0000 		.long	.LVL16-.Ltext0
+ 1266 00cc 0203 0000 		.long	.LVL17-.Ltext0
+ 1267 00d0 0600      		.word	0x6
+ 1268 00d2 60        		.byte	0x60
+ 1269 00d3 93        		.byte	0x93
+ 1270 00d4 01        		.uleb128 0x1
+ 1271 00d5 61        		.byte	0x61
+ 1272 00d6 93        		.byte	0x93
+ 1273 00d7 01        		.uleb128 0x1
+ 1274 00d8 3203 0000 		.long	.LVL18-.Ltext0
+ 1275 00dc 3603 0000 		.long	.LVL19-.Ltext0
+ 1276 00e0 0600      		.word	0x6
+ 1277 00e2 60        		.byte	0x60
+ 1278 00e3 93        		.byte	0x93
+ 1279 00e4 01        		.uleb128 0x1
+ 1280 00e5 61        		.byte	0x61
+ 1281 00e6 93        		.byte	0x93
+ 1282 00e7 01        		.uleb128 0x1
+ 1283 00e8 3603 0000 		.long	.LVL19-.Ltext0
+ 1284 00ec E803 0000 		.long	.LFE6-.Ltext0
+ 1285 00f0 0600      		.word	0x6
+ 1286 00f2 6A        		.byte	0x6a
+ 1287 00f3 93        		.byte	0x93
+ 1288 00f4 01        		.uleb128 0x1
+ 1289 00f5 6B        		.byte	0x6b
+ 1290 00f6 93        		.byte	0x93
+ 1291 00f7 01        		.uleb128 0x1
+ 1292 00f8 0000 0000 		.long	0x0
+ 1293 00fc 0000 0000 		.long	0x0
+ 1294               	.LLST10:
+ 1295 0100 9603 0000 		.long	.LVL21-.Ltext0
+ 1296 0104 9803 0000 		.long	.LVL22-.Ltext0
+ 1297 0108 0600      		.word	0x6
+ 1298 010a 62        		.byte	0x62
+ 1299 010b 93        		.byte	0x93
+ 1300 010c 01        		.uleb128 0x1
+ 1301 010d 63        		.byte	0x63
+ 1302 010e 93        		.byte	0x93
+ 1303 010f 01        		.uleb128 0x1
+ 1304 0110 9A03 0000 		.long	.LVL23-.Ltext0
+ 1305 0114 9C03 0000 		.long	.LVL24-.Ltext0
+ 1306 0118 0600      		.word	0x6
+ 1307 011a 68        		.byte	0x68
+ 1308 011b 93        		.byte	0x93
+ 1309 011c 01        		.uleb128 0x1
+ 1310 011d 69        		.byte	0x69
+ 1311 011e 93        		.byte	0x93
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 24
+
+
+ 1312 011f 01        		.uleb128 0x1
+ 1313 0120 9C03 0000 		.long	.LVL24-.Ltext0
+ 1314 0124 E803 0000 		.long	.LFE6-.Ltext0
+ 1315 0128 0600      		.word	0x6
+ 1316 012a 64        		.byte	0x64
+ 1317 012b 93        		.byte	0x93
+ 1318 012c 01        		.uleb128 0x1
+ 1319 012d 65        		.byte	0x65
+ 1320 012e 93        		.byte	0x93
+ 1321 012f 01        		.uleb128 0x1
+ 1322 0130 0000 0000 		.long	0x0
+ 1323 0134 0000 0000 		.long	0x0
+ 1324               	.LLST11:
+ 1325 0138 9C03 0000 		.long	.LVL24-.Ltext0
+ 1326 013c CC03 0000 		.long	.LVL27-.Ltext0
+ 1327 0140 0600      		.word	0x6
+ 1328 0142 62        		.byte	0x62
+ 1329 0143 93        		.byte	0x93
+ 1330 0144 01        		.uleb128 0x1
+ 1331 0145 63        		.byte	0x63
+ 1332 0146 93        		.byte	0x93
+ 1333 0147 01        		.uleb128 0x1
+ 1334 0148 CE03 0000 		.long	.LVL28-.Ltext0
+ 1335 014c E803 0000 		.long	.LFE6-.Ltext0
+ 1336 0150 0600      		.word	0x6
+ 1337 0152 62        		.byte	0x62
+ 1338 0153 93        		.byte	0x93
+ 1339 0154 01        		.uleb128 0x1
+ 1340 0155 63        		.byte	0x63
+ 1341 0156 93        		.byte	0x93
+ 1342 0157 01        		.uleb128 0x1
+ 1343 0158 0000 0000 		.long	0x0
+ 1344 015c 0000 0000 		.long	0x0
+ 1345               	.LLST14:
+ 1346 0160 6604 0000 		.long	.LVL29-.Ltext0
+ 1347 0164 C004 0000 		.long	.LVL33-.Ltext0
+ 1348 0168 0100      		.word	0x1
+ 1349 016a 68        		.byte	0x68
+ 1350 016b C004 0000 		.long	.LVL33-.Ltext0
+ 1351 016f CC04 0000 		.long	.LVL34-.Ltext0
+ 1352 0173 0100      		.word	0x1
+ 1353 0175 69        		.byte	0x69
+ 1354 0176 CE04 0000 		.long	.LVL35-.Ltext0
+ 1355 017a D004 0000 		.long	.LVL36-.Ltext0
+ 1356 017e 0100      		.word	0x1
+ 1357 0180 68        		.byte	0x68
+ 1358 0181 D004 0000 		.long	.LVL36-.Ltext0
+ 1359 0185 2005 0000 		.long	.LVL42-.Ltext0
+ 1360 0189 0100      		.word	0x1
+ 1361 018b 69        		.byte	0x69
+ 1362 018c 1406 0000 		.long	.LVL47-.Ltext0
+ 1363 0190 3206 0000 		.long	.LFE8-.Ltext0
+ 1364 0194 0100      		.word	0x1
+ 1365 0196 69        		.byte	0x69
+ 1366 0197 0000 0000 		.long	0x0
+ 1367 019b 0000 0000 		.long	0x0
+ 1368               	.LLST15:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 25
+
+
+ 1369 019f 2605 0000 		.long	.LVL43-.Ltext0
+ 1370 01a3 CA05 0000 		.long	.LVL44-.Ltext0
+ 1371 01a7 0600      		.word	0x6
+ 1372 01a9 66        		.byte	0x66
+ 1373 01aa 93        		.byte	0x93
+ 1374 01ab 01        		.uleb128 0x1
+ 1375 01ac 67        		.byte	0x67
+ 1376 01ad 93        		.byte	0x93
+ 1377 01ae 01        		.uleb128 0x1
+ 1378 01af CA05 0000 		.long	.LVL44-.Ltext0
+ 1379 01b3 F605 0000 		.long	.LVL46-.Ltext0
+ 1380 01b7 0600      		.word	0x6
+ 1381 01b9 68        		.byte	0x68
+ 1382 01ba 93        		.byte	0x93
+ 1383 01bb 01        		.uleb128 0x1
+ 1384 01bc 69        		.byte	0x69
+ 1385 01bd 93        		.byte	0x93
+ 1386 01be 01        		.uleb128 0x1
+ 1387 01bf 0000 0000 		.long	0x0
+ 1388 01c3 0000 0000 		.long	0x0
+ 1389               	.LLST16:
+ 1390 01c7 E204 0000 		.long	.LVL38-.Ltext0
+ 1391 01cb E205 0000 		.long	.LVL45-.Ltext0
+ 1392 01cf 0600      		.word	0x6
+ 1393 01d1 62        		.byte	0x62
+ 1394 01d2 93        		.byte	0x93
+ 1395 01d3 01        		.uleb128 0x1
+ 1396 01d4 63        		.byte	0x63
+ 1397 01d5 93        		.byte	0x93
+ 1398 01d6 01        		.uleb128 0x1
+ 1399 01d7 0000 0000 		.long	0x0
+ 1400 01db 0000 0000 		.long	0x0
+ 1401               	.LLST17:
+ 1402 01df 8C04 0000 		.long	.LVL30-.Ltext0
+ 1403 01e3 1C06 0000 		.long	.LVL50-.Ltext0
+ 1404 01e7 0600      		.word	0x6
+ 1405 01e9 60        		.byte	0x60
+ 1406 01ea 93        		.byte	0x93
+ 1407 01eb 01        		.uleb128 0x1
+ 1408 01ec 61        		.byte	0x61
+ 1409 01ed 93        		.byte	0x93
+ 1410 01ee 01        		.uleb128 0x1
+ 1411 01ef 0000 0000 		.long	0x0
+ 1412 01f3 0000 0000 		.long	0x0
+ 1413               	.LLST18:
+ 1414 01f7 9204 0000 		.long	.LVL31-.Ltext0
+ 1415 01fb 2006 0000 		.long	.LVL51-.Ltext0
+ 1416 01ff 0600      		.word	0x6
+ 1417 0201 5E        		.byte	0x5e
+ 1418 0202 93        		.byte	0x93
+ 1419 0203 01        		.uleb128 0x1
+ 1420 0204 5F        		.byte	0x5f
+ 1421 0205 93        		.byte	0x93
+ 1422 0206 01        		.uleb128 0x1
+ 1423 0207 0000 0000 		.long	0x0
+ 1424 020b 0000 0000 		.long	0x0
+ 1425               	.LLST19:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 26
+
+
+ 1426 020f 9E04 0000 		.long	.LVL32-.Ltext0
+ 1427 0213 3006 0000 		.long	.LVL53-.Ltext0
+ 1428 0217 0600      		.word	0x6
+ 1429 0219 56        		.byte	0x56
+ 1430 021a 93        		.byte	0x93
+ 1431 021b 01        		.uleb128 0x1
+ 1432 021c 57        		.byte	0x57
+ 1433 021d 93        		.byte	0x93
+ 1434 021e 01        		.uleb128 0x1
+ 1435 021f 0000 0000 		.long	0x0
+ 1436 0223 0000 0000 		.long	0x0
+ 1437               	.LLST20:
+ 1438 0227 D804 0000 		.long	.LVL37-.Ltext0
+ 1439 022b 1806 0000 		.long	.LVL49-.Ltext0
+ 1440 022f 0600      		.word	0x6
+ 1441 0231 6C        		.byte	0x6c
+ 1442 0232 93        		.byte	0x93
+ 1443 0233 01        		.uleb128 0x1
+ 1444 0234 6D        		.byte	0x6d
+ 1445 0235 93        		.byte	0x93
+ 1446 0236 01        		.uleb128 0x1
+ 1447 0237 0000 0000 		.long	0x0
+ 1448 023b 0000 0000 		.long	0x0
+ 1449               	.LLST22:
+ 1450 023f 3206 0000 		.long	.LVL54-.Ltext0
+ 1451 0243 3E06 0000 		.long	.LVL56-.Ltext0
+ 1452 0247 0600      		.word	0x6
+ 1453 0249 68        		.byte	0x68
+ 1454 024a 93        		.byte	0x93
+ 1455 024b 01        		.uleb128 0x1
+ 1456 024c 69        		.byte	0x69
+ 1457 024d 93        		.byte	0x93
+ 1458 024e 01        		.uleb128 0x1
+ 1459 024f 3E06 0000 		.long	.LVL56-.Ltext0
+ 1460 0253 5406 0000 		.long	.LVL58-.Ltext0
+ 1461 0257 0600      		.word	0x6
+ 1462 0259 6C        		.byte	0x6c
+ 1463 025a 93        		.byte	0x93
+ 1464 025b 01        		.uleb128 0x1
+ 1465 025c 6D        		.byte	0x6d
+ 1466 025d 93        		.byte	0x93
+ 1467 025e 01        		.uleb128 0x1
+ 1468 025f 0000 0000 		.long	0x0
+ 1469 0263 0000 0000 		.long	0x0
+ 1470               	.LLST23:
+ 1471 0267 3C06 0000 		.long	.LVL55-.Ltext0
+ 1472 026b 5606 0000 		.long	.LVL59-.Ltext0
+ 1473 026f 0100      		.word	0x1
+ 1474 0271 61        		.byte	0x61
+ 1475 0272 0000 0000 		.long	0x0
+ 1476 0276 0000 0000 		.long	0x0
+ 1477               		.section	.debug_info
+ 1478 0000 0F04 0000 		.long	0x40f
+ 1479 0004 0200      		.word	0x2
+ 1480 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 1481 000a 04        		.byte	0x4
+ 1482 000b 01        		.uleb128 0x1
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 27
+
+
+ 1483 000c 0000 0000 		.long	.LASF41
+ 1484 0010 01        		.byte	0x1
+ 1485 0011 0000 0000 		.long	.LASF42
+ 1486 0015 0000 0000 		.long	.LASF43
+ 1487 0019 0000 0000 		.long	.Ltext0
+ 1488 001d 0000 0000 		.long	.Letext0
+ 1489 0021 0000 0000 		.long	.Ldebug_line0
+ 1490 0025 02        		.uleb128 0x2
+ 1491 0026 01        		.byte	0x1
+ 1492 0027 06        		.byte	0x6
+ 1493 0028 0000 0000 		.long	.LASF0
+ 1494 002c 03        		.uleb128 0x3
+ 1495 002d 0000 0000 		.long	.LASF2
+ 1496 0031 02        		.byte	0x2
+ 1497 0032 7A        		.byte	0x7a
+ 1498 0033 3700 0000 		.long	0x37
+ 1499 0037 02        		.uleb128 0x2
+ 1500 0038 01        		.byte	0x1
+ 1501 0039 08        		.byte	0x8
+ 1502 003a 0000 0000 		.long	.LASF1
+ 1503 003e 04        		.uleb128 0x4
+ 1504 003f 02        		.byte	0x2
+ 1505 0040 05        		.byte	0x5
+ 1506 0041 696E 7400 		.string	"int"
+ 1507 0045 03        		.uleb128 0x3
+ 1508 0046 0000 0000 		.long	.LASF3
+ 1509 004a 02        		.byte	0x2
+ 1510 004b 7C        		.byte	0x7c
+ 1511 004c 5000 0000 		.long	0x50
+ 1512 0050 02        		.uleb128 0x2
+ 1513 0051 02        		.byte	0x2
+ 1514 0052 07        		.byte	0x7
+ 1515 0053 0000 0000 		.long	.LASF4
+ 1516 0057 02        		.uleb128 0x2
+ 1517 0058 04        		.byte	0x4
+ 1518 0059 05        		.byte	0x5
+ 1519 005a 0000 0000 		.long	.LASF5
+ 1520 005e 02        		.uleb128 0x2
+ 1521 005f 04        		.byte	0x4
+ 1522 0060 07        		.byte	0x7
+ 1523 0061 0000 0000 		.long	.LASF6
+ 1524 0065 02        		.uleb128 0x2
+ 1525 0066 08        		.byte	0x8
+ 1526 0067 05        		.byte	0x5
+ 1527 0068 0000 0000 		.long	.LASF7
+ 1528 006c 02        		.uleb128 0x2
+ 1529 006d 08        		.byte	0x8
+ 1530 006e 07        		.byte	0x7
+ 1531 006f 0000 0000 		.long	.LASF8
+ 1532 0073 03        		.uleb128 0x3
+ 1533 0074 0000 0000 		.long	.LASF9
+ 1534 0078 03        		.byte	0x3
+ 1535 0079 D4        		.byte	0xd4
+ 1536 007a 7E00 0000 		.long	0x7e
+ 1537 007e 05        		.uleb128 0x5
+ 1538 007f 01        		.byte	0x1
+ 1539 0080 08        		.byte	0x8
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 28
+
+
+ 1540 0081 06        		.uleb128 0x6
+ 1541 0082 02        		.byte	0x2
+ 1542 0083 04        		.byte	0x4
+ 1543 0084 15        		.byte	0x15
+ 1544 0085 A200 0000 		.long	0xa2
+ 1545 0089 07        		.uleb128 0x7
+ 1546 008a 0000 0000 		.long	.LASF10
+ 1547 008e 00        		.sleb128 0
+ 1548 008f 07        		.uleb128 0x7
+ 1549 0090 0000 0000 		.long	.LASF11
+ 1550 0094 01        		.sleb128 1
+ 1551 0095 07        		.uleb128 0x7
+ 1552 0096 0000 0000 		.long	.LASF12
+ 1553 009a 02        		.sleb128 2
+ 1554 009b 07        		.uleb128 0x7
+ 1555 009c 0000 0000 		.long	.LASF13
+ 1556 00a0 03        		.sleb128 3
+ 1557 00a1 00        		.byte	0x0
+ 1558 00a2 03        		.uleb128 0x3
+ 1559 00a3 0000 0000 		.long	.LASF14
+ 1560 00a7 04        		.byte	0x4
+ 1561 00a8 15        		.byte	0x15
+ 1562 00a9 8100 0000 		.long	0x81
+ 1563 00ad 08        		.uleb128 0x8
+ 1564 00ae 0E        		.byte	0xe
+ 1565 00af 04        		.byte	0x4
+ 1566 00b0 17        		.byte	0x17
+ 1567 00b1 1401 0000 		.long	0x114
+ 1568 00b5 09        		.uleb128 0x9
+ 1569 00b6 0000 0000 		.long	.LASF15
+ 1570 00ba 04        		.byte	0x4
+ 1571 00bb 18        		.byte	0x18
+ 1572 00bc 4500 0000 		.long	0x45
+ 1573 00c0 02        		.byte	0x2
+ 1574 00c1 23        		.byte	0x23
+ 1575 00c2 00        		.uleb128 0x0
+ 1576 00c3 09        		.uleb128 0x9
+ 1577 00c4 0000 0000 		.long	.LASF16
+ 1578 00c8 04        		.byte	0x4
+ 1579 00c9 18        		.byte	0x18
+ 1580 00ca 4500 0000 		.long	0x45
+ 1581 00ce 02        		.byte	0x2
+ 1582 00cf 23        		.byte	0x23
+ 1583 00d0 02        		.uleb128 0x2
+ 1584 00d1 09        		.uleb128 0x9
+ 1585 00d2 0000 0000 		.long	.LASF17
+ 1586 00d6 04        		.byte	0x4
+ 1587 00d7 19        		.byte	0x19
+ 1588 00d8 A200 0000 		.long	0xa2
+ 1589 00dc 02        		.byte	0x2
+ 1590 00dd 23        		.byte	0x23
+ 1591 00de 04        		.uleb128 0x4
+ 1592 00df 0A        		.uleb128 0xa
+ 1593 00e0 7800      		.string	"x"
+ 1594 00e2 04        		.byte	0x4
+ 1595 00e3 1A        		.byte	0x1a
+ 1596 00e4 4500 0000 		.long	0x45
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 29
+
+
+ 1597 00e8 02        		.byte	0x2
+ 1598 00e9 23        		.byte	0x23
+ 1599 00ea 06        		.uleb128 0x6
+ 1600 00eb 0A        		.uleb128 0xa
+ 1601 00ec 7900      		.string	"y"
+ 1602 00ee 04        		.byte	0x4
+ 1603 00ef 1A        		.byte	0x1a
+ 1604 00f0 4500 0000 		.long	0x45
+ 1605 00f4 02        		.byte	0x2
+ 1606 00f5 23        		.byte	0x23
+ 1607 00f6 08        		.uleb128 0x8
+ 1608 00f7 09        		.uleb128 0x9
+ 1609 00f8 0000 0000 		.long	.LASF18
+ 1610 00fc 04        		.byte	0x4
+ 1611 00fd 1B        		.byte	0x1b
+ 1612 00fe 4500 0000 		.long	0x45
+ 1613 0102 02        		.byte	0x2
+ 1614 0103 23        		.byte	0x23
+ 1615 0104 0A        		.uleb128 0xa
+ 1616 0105 09        		.uleb128 0x9
+ 1617 0106 0000 0000 		.long	.LASF19
+ 1618 010a 04        		.byte	0x4
+ 1619 010b 1B        		.byte	0x1b
+ 1620 010c 4500 0000 		.long	0x45
+ 1621 0110 02        		.byte	0x2
+ 1622 0111 23        		.byte	0x23
+ 1623 0112 0C        		.uleb128 0xc
+ 1624 0113 00        		.byte	0x0
+ 1625 0114 0B        		.uleb128 0xb
+ 1626 0115 6C63 6400 		.string	"lcd"
+ 1627 0119 04        		.byte	0x4
+ 1628 011a 1C        		.byte	0x1c
+ 1629 011b AD00 0000 		.long	0xad
+ 1630 011f 08        		.uleb128 0x8
+ 1631 0120 08        		.byte	0x8
+ 1632 0121 04        		.byte	0x4
+ 1633 0122 20        		.byte	0x20
+ 1634 0123 6001 0000 		.long	0x160
+ 1635 0127 09        		.uleb128 0x9
+ 1636 0128 0000 0000 		.long	.LASF20
+ 1637 012c 04        		.byte	0x4
+ 1638 012d 21        		.byte	0x21
+ 1639 012e 4500 0000 		.long	0x45
+ 1640 0132 02        		.byte	0x2
+ 1641 0133 23        		.byte	0x23
+ 1642 0134 00        		.uleb128 0x0
+ 1643 0135 09        		.uleb128 0x9
+ 1644 0136 0000 0000 		.long	.LASF21
+ 1645 013a 04        		.byte	0x4
+ 1646 013b 21        		.byte	0x21
+ 1647 013c 4500 0000 		.long	0x45
+ 1648 0140 02        		.byte	0x2
+ 1649 0141 23        		.byte	0x23
+ 1650 0142 02        		.uleb128 0x2
+ 1651 0143 0A        		.uleb128 0xa
+ 1652 0144 746F 7000 		.string	"top"
+ 1653 0148 04        		.byte	0x4
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 30
+
+
+ 1654 0149 22        		.byte	0x22
+ 1655 014a 4500 0000 		.long	0x45
+ 1656 014e 02        		.byte	0x2
+ 1657 014f 23        		.byte	0x23
+ 1658 0150 04        		.uleb128 0x4
+ 1659 0151 09        		.uleb128 0x9
+ 1660 0152 0000 0000 		.long	.LASF22
+ 1661 0156 04        		.byte	0x4
+ 1662 0157 22        		.byte	0x22
+ 1663 0158 4500 0000 		.long	0x45
+ 1664 015c 02        		.byte	0x2
+ 1665 015d 23        		.byte	0x23
+ 1666 015e 06        		.uleb128 0x6
+ 1667 015f 00        		.byte	0x0
+ 1668 0160 03        		.uleb128 0x3
+ 1669 0161 0000 0000 		.long	.LASF23
+ 1670 0165 04        		.byte	0x4
+ 1671 0166 23        		.byte	0x23
+ 1672 0167 1F01 0000 		.long	0x11f
+ 1673 016b 0C        		.uleb128 0xc
+ 1674 016c 01        		.byte	0x1
+ 1675 016d 0000 0000 		.long	.LASF24
+ 1676 0171 01        		.byte	0x1
+ 1677 0172 1D        		.byte	0x1d
+ 1678 0173 01        		.byte	0x1
+ 1679 0174 0000 0000 		.long	.LFB3
+ 1680 0178 0000 0000 		.long	.LFE3
+ 1681 017c 02        		.byte	0x2
+ 1682 017d 90        		.byte	0x90
+ 1683 017e 20        		.uleb128 0x20
+ 1684 017f 9101 0000 		.long	0x191
+ 1685 0183 0D        		.uleb128 0xd
+ 1686 0184 6F00      		.string	"o"
+ 1687 0186 01        		.byte	0x1
+ 1688 0187 1C        		.byte	0x1c
+ 1689 0188 A200 0000 		.long	0xa2
+ 1690 018c 0000 0000 		.long	.LLST1
+ 1691 0190 00        		.byte	0x0
+ 1692 0191 0C        		.uleb128 0xc
+ 1693 0192 01        		.byte	0x1
+ 1694 0193 0000 0000 		.long	.LASF25
+ 1695 0197 01        		.byte	0x1
+ 1696 0198 49        		.byte	0x49
+ 1697 0199 01        		.byte	0x1
+ 1698 019a 0000 0000 		.long	.LFB5
+ 1699 019e 0000 0000 		.long	.LFE5
+ 1700 01a2 02        		.byte	0x2
+ 1701 01a3 90        		.byte	0x90
+ 1702 01a4 20        		.uleb128 0x20
+ 1703 01a5 DF01 0000 		.long	0x1df
+ 1704 01a9 0E        		.uleb128 0xe
+ 1705 01aa 7200      		.string	"r"
+ 1706 01ac 01        		.byte	0x1
+ 1707 01ad 48        		.byte	0x48
+ 1708 01ae 6001 0000 		.long	0x160
+ 1709 01b2 02        		.byte	0x2
+ 1710 01b3 8C        		.byte	0x8c
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 31
+
+
+ 1711 01b4 01        		.sleb128 1
+ 1712 01b5 0D        		.uleb128 0xd
+ 1713 01b6 636F 6C00 		.string	"col"
+ 1714 01ba 01        		.byte	0x1
+ 1715 01bb 48        		.byte	0x48
+ 1716 01bc 4500 0000 		.long	0x45
+ 1717 01c0 0000 0000 		.long	.LLST3
+ 1718 01c4 0F        		.uleb128 0xf
+ 1719 01c5 7800      		.string	"x"
+ 1720 01c7 01        		.byte	0x1
+ 1721 01c8 4A        		.byte	0x4a
+ 1722 01c9 4500 0000 		.long	0x45
+ 1723 01cd 0000 0000 		.long	.LLST4
+ 1724 01d1 0F        		.uleb128 0xf
+ 1725 01d2 7900      		.string	"y"
+ 1726 01d4 01        		.byte	0x1
+ 1727 01d5 4A        		.byte	0x4a
+ 1728 01d6 4500 0000 		.long	0x45
+ 1729 01da 0000 0000 		.long	.LLST5
+ 1730 01de 00        		.byte	0x0
+ 1731 01df 0C        		.uleb128 0xc
+ 1732 01e0 01        		.byte	0x1
+ 1733 01e1 0000 0000 		.long	.LASF26
+ 1734 01e5 01        		.byte	0x1
+ 1735 01e6 3D        		.byte	0x3d
+ 1736 01e7 01        		.byte	0x1
+ 1737 01e8 0000 0000 		.long	.LFB4
+ 1738 01ec 0000 0000 		.long	.LFE4
+ 1739 01f0 02        		.byte	0x2
+ 1740 01f1 90        		.byte	0x90
+ 1741 01f2 20        		.uleb128 0x20
+ 1742 01f3 4B02 0000 		.long	0x24b
+ 1743 01f7 0E        		.uleb128 0xe
+ 1744 01f8 7200      		.string	"r"
+ 1745 01fa 01        		.byte	0x1
+ 1746 01fb 3C        		.byte	0x3c
+ 1747 01fc 6001 0000 		.long	0x160
+ 1748 0200 02        		.byte	0x2
+ 1749 0201 8C        		.byte	0x8c
+ 1750 0202 21        		.sleb128 33
+ 1751 0203 0D        		.uleb128 0xd
+ 1752 0204 636F 6C00 		.string	"col"
+ 1753 0208 01        		.byte	0x1
+ 1754 0209 3C        		.byte	0x3c
+ 1755 020a 4500 0000 		.long	0x45
+ 1756 020e 0000 0000 		.long	.LLST7
+ 1757 0212 10        		.uleb128 0x10
+ 1758 0213 7265 6300 		.string	"rec"
+ 1759 0217 01        		.byte	0x1
+ 1760 0218 3E        		.byte	0x3e
+ 1761 0219 6001 0000 		.long	0x160
+ 1762 021d 02        		.byte	0x2
+ 1763 021e 8C        		.byte	0x8c
+ 1764 021f 01        		.sleb128 1
+ 1765 0220 11        		.uleb128 0x11
+ 1766 0221 0000 0000 		.long	.LASF27
+ 1767 0225 01        		.byte	0x1
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 32
+
+
+ 1768 0226 40        		.byte	0x40
+ 1769 0227 6001 0000 		.long	0x160
+ 1770 022b 02        		.byte	0x2
+ 1771 022c 8C        		.byte	0x8c
+ 1772 022d 09        		.sleb128 9
+ 1773 022e 11        		.uleb128 0x11
+ 1774 022f 0000 0000 		.long	.LASF28
+ 1775 0233 01        		.byte	0x1
+ 1776 0234 42        		.byte	0x42
+ 1777 0235 6001 0000 		.long	0x160
+ 1778 0239 02        		.byte	0x2
+ 1779 023a 8C        		.byte	0x8c
+ 1780 023b 11        		.sleb128 17
+ 1781 023c 11        		.uleb128 0x11
+ 1782 023d 0000 0000 		.long	.LASF29
+ 1783 0241 01        		.byte	0x1
+ 1784 0242 44        		.byte	0x44
+ 1785 0243 6001 0000 		.long	0x160
+ 1786 0247 02        		.byte	0x2
+ 1787 0248 8C        		.byte	0x8c
+ 1788 0249 19        		.sleb128 25
+ 1789 024a 00        		.byte	0x0
+ 1790 024b 0C        		.uleb128 0xc
+ 1791 024c 01        		.byte	0x1
+ 1792 024d 0000 0000 		.long	.LASF30
+ 1793 0251 01        		.byte	0x1
+ 1794 0252 58        		.byte	0x58
+ 1795 0253 01        		.byte	0x1
+ 1796 0254 0000 0000 		.long	.LFB6
+ 1797 0258 0000 0000 		.long	.LFE6
+ 1798 025c 02        		.byte	0x2
+ 1799 025d 90        		.byte	0x90
+ 1800 025e 20        		.uleb128 0x20
+ 1801 025f 9902 0000 		.long	0x299
+ 1802 0263 0E        		.uleb128 0xe
+ 1803 0264 7200      		.string	"r"
+ 1804 0266 01        		.byte	0x1
+ 1805 0267 57        		.byte	0x57
+ 1806 0268 6001 0000 		.long	0x160
+ 1807 026c 02        		.byte	0x2
+ 1808 026d 8C        		.byte	0x8c
+ 1809 026e 01        		.sleb128 1
+ 1810 026f 0D        		.uleb128 0xd
+ 1811 0270 636F 6C00 		.string	"col"
+ 1812 0274 01        		.byte	0x1
+ 1813 0275 57        		.byte	0x57
+ 1814 0276 9902 0000 		.long	0x299
+ 1815 027a 0000 0000 		.long	.LLST9
+ 1816 027e 0F        		.uleb128 0xf
+ 1817 027f 7800      		.string	"x"
+ 1818 0281 01        		.byte	0x1
+ 1819 0282 59        		.byte	0x59
+ 1820 0283 4500 0000 		.long	0x45
+ 1821 0287 0000 0000 		.long	.LLST10
+ 1822 028b 0F        		.uleb128 0xf
+ 1823 028c 7900      		.string	"y"
+ 1824 028e 01        		.byte	0x1
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 33
+
+
+ 1825 028f 59        		.byte	0x59
+ 1826 0290 4500 0000 		.long	0x45
+ 1827 0294 0000 0000 		.long	.LLST11
+ 1828 0298 00        		.byte	0x0
+ 1829 0299 12        		.uleb128 0x12
+ 1830 029a 02        		.byte	0x2
+ 1831 029b 4500 0000 		.long	0x45
+ 1832 029f 13        		.uleb128 0x13
+ 1833 02a0 01        		.byte	0x1
+ 1834 02a1 0000 0000 		.long	.LASF44
+ 1835 02a5 01        		.byte	0x1
+ 1836 02a6 67        		.byte	0x67
+ 1837 02a7 0000 0000 		.long	.LFB7
+ 1838 02ab 0000 0000 		.long	.LFE7
+ 1839 02af 02        		.byte	0x2
+ 1840 02b0 90        		.byte	0x90
+ 1841 02b1 20        		.uleb128 0x20
+ 1842 02b2 C302 0000 		.long	0x2c3
+ 1843 02b6 10        		.uleb128 0x10
+ 1844 02b7 7200      		.string	"r"
+ 1845 02b9 01        		.byte	0x1
+ 1846 02ba 6A        		.byte	0x6a
+ 1847 02bb 6001 0000 		.long	0x160
+ 1848 02bf 02        		.byte	0x2
+ 1849 02c0 8C        		.byte	0x8c
+ 1850 02c1 01        		.sleb128 1
+ 1851 02c2 00        		.byte	0x0
+ 1852 02c3 0C        		.uleb128 0xc
+ 1853 02c4 01        		.byte	0x1
+ 1854 02c5 0000 0000 		.long	.LASF31
+ 1855 02c9 01        		.byte	0x1
+ 1856 02ca 6F        		.byte	0x6f
+ 1857 02cb 01        		.byte	0x1
+ 1858 02cc 0000 0000 		.long	.LFB8
+ 1859 02d0 0000 0000 		.long	.LFE8
+ 1860 02d4 02        		.byte	0x2
+ 1861 02d5 90        		.byte	0x90
+ 1862 02d6 20        		.uleb128 0x20
+ 1863 02d7 8303 0000 		.long	0x383
+ 1864 02db 0D        		.uleb128 0xd
+ 1865 02dc 6300      		.string	"c"
+ 1866 02de 01        		.byte	0x1
+ 1867 02df 6E        		.byte	0x6e
+ 1868 02e0 8303 0000 		.long	0x383
+ 1869 02e4 0000 0000 		.long	.LLST14
+ 1870 02e8 10        		.uleb128 0x10
+ 1871 02e9 7800      		.string	"x"
+ 1872 02eb 01        		.byte	0x1
+ 1873 02ec 70        		.byte	0x70
+ 1874 02ed 4500 0000 		.long	0x45
+ 1875 02f1 06        		.byte	0x6
+ 1876 02f2 64        		.byte	0x64
+ 1877 02f3 93        		.byte	0x93
+ 1878 02f4 01        		.uleb128 0x1
+ 1879 02f5 65        		.byte	0x65
+ 1880 02f6 93        		.byte	0x93
+ 1881 02f7 01        		.uleb128 0x1
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 34
+
+
+ 1882 02f8 0F        		.uleb128 0xf
+ 1883 02f9 7900      		.string	"y"
+ 1884 02fb 01        		.byte	0x1
+ 1885 02fc 70        		.byte	0x70
+ 1886 02fd 4500 0000 		.long	0x45
+ 1887 0301 0000 0000 		.long	.LLST15
+ 1888 0305 14        		.uleb128 0x14
+ 1889 0306 0000 0000 		.long	.LASF32
+ 1890 030a 01        		.byte	0x1
+ 1891 030b 71        		.byte	0x71
+ 1892 030c 8A03 0000 		.long	0x38a
+ 1893 0310 0000 0000 		.long	.LLST16
+ 1894 0314 15        		.uleb128 0x15
+ 1895 0315 0000 0000 		.long	.LASF34
+ 1896 0319 01        		.byte	0x1
+ 1897 031a 72        		.byte	0x72
+ 1898 031b 2C00 0000 		.long	0x2c
+ 1899 031f 11        		.uleb128 0x11
+ 1900 0320 0000 0000 		.long	.LASF33
+ 1901 0324 01        		.byte	0x1
+ 1902 0325 72        		.byte	0x72
+ 1903 0326 2C00 0000 		.long	0x2c
+ 1904 032a 01        		.byte	0x1
+ 1905 032b 69        		.byte	0x69
+ 1906 032c 0F        		.uleb128 0xf
+ 1907 032d 7363 00   		.string	"sc"
+ 1908 0330 01        		.byte	0x1
+ 1909 0331 73        		.byte	0x73
+ 1910 0332 4500 0000 		.long	0x45
+ 1911 0336 0000 0000 		.long	.LLST17
+ 1912 033a 0F        		.uleb128 0xf
+ 1913 033b 6563 00   		.string	"ec"
+ 1914 033e 01        		.byte	0x1
+ 1915 033f 73        		.byte	0x73
+ 1916 0340 4500 0000 		.long	0x45
+ 1917 0344 0000 0000 		.long	.LLST18
+ 1918 0348 0F        		.uleb128 0xf
+ 1919 0349 7370 00   		.string	"sp"
+ 1920 034c 01        		.byte	0x1
+ 1921 034d 73        		.byte	0x73
+ 1922 034e 4500 0000 		.long	0x45
+ 1923 0352 0000 0000 		.long	.LLST19
+ 1924 0356 0F        		.uleb128 0xf
+ 1925 0357 6570 00   		.string	"ep"
+ 1926 035a 01        		.byte	0x1
+ 1927 035b 73        		.byte	0x73
+ 1928 035c 4500 0000 		.long	0x45
+ 1929 0360 0000 0000 		.long	.LLST20
+ 1930 0364 16        		.uleb128 0x16
+ 1931 0365 0000 0000 		.long	.Ldebug_ranges0+0x0
+ 1932 0369 15        		.uleb128 0x15
+ 1933 036a 0000 0000 		.long	.LASF35
+ 1934 036e 01        		.byte	0x1
+ 1935 036f 89        		.byte	0x89
+ 1936 0370 4500 0000 		.long	0x45
+ 1937 0374 11        		.uleb128 0x11
+ 1938 0375 0000 0000 		.long	.LASF36
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 35
+
+
+ 1939 0379 01        		.byte	0x1
+ 1940 037a 89        		.byte	0x89
+ 1941 037b 2C00 0000 		.long	0x2c
+ 1942 037f 01        		.byte	0x1
+ 1943 0380 6B        		.byte	0x6b
+ 1944 0381 00        		.byte	0x0
+ 1945 0382 00        		.byte	0x0
+ 1946 0383 02        		.uleb128 0x2
+ 1947 0384 01        		.byte	0x1
+ 1948 0385 08        		.byte	0x8
+ 1949 0386 0000 0000 		.long	.LASF37
+ 1950 038a 12        		.uleb128 0x12
+ 1951 038b 02        		.byte	0x2
+ 1952 038c 9003 0000 		.long	0x390
+ 1953 0390 17        		.uleb128 0x17
+ 1954 0391 7300 0000 		.long	0x73
+ 1955 0395 0C        		.uleb128 0xc
+ 1956 0396 01        		.byte	0x1
+ 1957 0397 0000 0000 		.long	.LASF38
+ 1958 039b 01        		.byte	0x1
+ 1959 039c 9A        		.byte	0x9a
+ 1960 039d 01        		.byte	0x1
+ 1961 039e 0000 0000 		.long	.LFB9
+ 1962 03a2 0000 0000 		.long	.LFE9
+ 1963 03a6 02        		.byte	0x2
+ 1964 03a7 90        		.byte	0x90
+ 1965 03a8 20        		.uleb128 0x20
+ 1966 03a9 CA03 0000 		.long	0x3ca
+ 1967 03ad 0D        		.uleb128 0xd
+ 1968 03ae 7374 7200 		.string	"str"
+ 1969 03b2 01        		.byte	0x1
+ 1970 03b3 99        		.byte	0x99
+ 1971 03b4 CA03 0000 		.long	0x3ca
+ 1972 03b8 0000 0000 		.long	.LLST22
+ 1973 03bc 0F        		.uleb128 0xf
+ 1974 03bd 6900      		.string	"i"
+ 1975 03bf 01        		.byte	0x1
+ 1976 03c0 9B        		.byte	0x9b
+ 1977 03c1 2C00 0000 		.long	0x2c
+ 1978 03c5 0000 0000 		.long	.LLST23
+ 1979 03c9 00        		.byte	0x0
+ 1980 03ca 12        		.uleb128 0x12
+ 1981 03cb 02        		.byte	0x2
+ 1982 03cc 8303 0000 		.long	0x383
+ 1983 03d0 18        		.uleb128 0x18
+ 1984 03d1 01        		.byte	0x1
+ 1985 03d2 0000 0000 		.long	.LASF45
+ 1986 03d6 01        		.byte	0x1
+ 1987 03d7 0F        		.byte	0xf
+ 1988 03d8 0000 0000 		.long	.LFB2
+ 1989 03dc 0000 0000 		.long	.LFE2
+ 1990 03e0 02        		.byte	0x2
+ 1991 03e1 90        		.byte	0x90
+ 1992 03e2 20        		.uleb128 0x20
+ 1993 03e3 19        		.uleb128 0x19
+ 1994 03e4 2C00 0000 		.long	0x2c
+ 1995 03e8 EE03 0000 		.long	0x3ee
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 36
+
+
+ 1996 03ec 1A        		.uleb128 0x1a
+ 1997 03ed 00        		.byte	0x0
+ 1998 03ee 1B        		.uleb128 0x1b
+ 1999 03ef 0000 0000 		.long	.LASF39
+ 2000 03f3 05        		.byte	0x5
+ 2001 03f4 0C        		.byte	0xc
+ 2002 03f5 FB03 0000 		.long	0x3fb
+ 2003 03f9 01        		.byte	0x1
+ 2004 03fa 01        		.byte	0x1
+ 2005 03fb 17        		.uleb128 0x17
+ 2006 03fc E303 0000 		.long	0x3e3
+ 2007 0400 1C        		.uleb128 0x1c
+ 2008 0401 0000 0000 		.long	.LASF40
+ 2009 0405 01        		.byte	0x1
+ 2010 0406 0C        		.byte	0xc
+ 2011 0407 1401 0000 		.long	0x114
+ 2012 040b 01        		.byte	0x1
+ 2013 040c 05        		.byte	0x5
+ 2014 040d 03        		.byte	0x3
+ 2015 040e 0000 0000 		.long	display
+ 2016 0412 00        		.byte	0x0
+ 2017               		.section	.debug_abbrev
+ 2018 0000 01        		.uleb128 0x1
+ 2019 0001 11        		.uleb128 0x11
+ 2020 0002 01        		.byte	0x1
+ 2021 0003 25        		.uleb128 0x25
+ 2022 0004 0E        		.uleb128 0xe
+ 2023 0005 13        		.uleb128 0x13
+ 2024 0006 0B        		.uleb128 0xb
+ 2025 0007 03        		.uleb128 0x3
+ 2026 0008 0E        		.uleb128 0xe
+ 2027 0009 1B        		.uleb128 0x1b
+ 2028 000a 0E        		.uleb128 0xe
+ 2029 000b 11        		.uleb128 0x11
+ 2030 000c 01        		.uleb128 0x1
+ 2031 000d 12        		.uleb128 0x12
+ 2032 000e 01        		.uleb128 0x1
+ 2033 000f 10        		.uleb128 0x10
+ 2034 0010 06        		.uleb128 0x6
+ 2035 0011 00        		.byte	0x0
+ 2036 0012 00        		.byte	0x0
+ 2037 0013 02        		.uleb128 0x2
+ 2038 0014 24        		.uleb128 0x24
+ 2039 0015 00        		.byte	0x0
+ 2040 0016 0B        		.uleb128 0xb
+ 2041 0017 0B        		.uleb128 0xb
+ 2042 0018 3E        		.uleb128 0x3e
+ 2043 0019 0B        		.uleb128 0xb
+ 2044 001a 03        		.uleb128 0x3
+ 2045 001b 0E        		.uleb128 0xe
+ 2046 001c 00        		.byte	0x0
+ 2047 001d 00        		.byte	0x0
+ 2048 001e 03        		.uleb128 0x3
+ 2049 001f 16        		.uleb128 0x16
+ 2050 0020 00        		.byte	0x0
+ 2051 0021 03        		.uleb128 0x3
+ 2052 0022 0E        		.uleb128 0xe
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 37
+
+
+ 2053 0023 3A        		.uleb128 0x3a
+ 2054 0024 0B        		.uleb128 0xb
+ 2055 0025 3B        		.uleb128 0x3b
+ 2056 0026 0B        		.uleb128 0xb
+ 2057 0027 49        		.uleb128 0x49
+ 2058 0028 13        		.uleb128 0x13
+ 2059 0029 00        		.byte	0x0
+ 2060 002a 00        		.byte	0x0
+ 2061 002b 04        		.uleb128 0x4
+ 2062 002c 24        		.uleb128 0x24
+ 2063 002d 00        		.byte	0x0
+ 2064 002e 0B        		.uleb128 0xb
+ 2065 002f 0B        		.uleb128 0xb
+ 2066 0030 3E        		.uleb128 0x3e
+ 2067 0031 0B        		.uleb128 0xb
+ 2068 0032 03        		.uleb128 0x3
+ 2069 0033 08        		.uleb128 0x8
+ 2070 0034 00        		.byte	0x0
+ 2071 0035 00        		.byte	0x0
+ 2072 0036 05        		.uleb128 0x5
+ 2073 0037 24        		.uleb128 0x24
+ 2074 0038 00        		.byte	0x0
+ 2075 0039 0B        		.uleb128 0xb
+ 2076 003a 0B        		.uleb128 0xb
+ 2077 003b 3E        		.uleb128 0x3e
+ 2078 003c 0B        		.uleb128 0xb
+ 2079 003d 00        		.byte	0x0
+ 2080 003e 00        		.byte	0x0
+ 2081 003f 06        		.uleb128 0x6
+ 2082 0040 04        		.uleb128 0x4
+ 2083 0041 01        		.byte	0x1
+ 2084 0042 0B        		.uleb128 0xb
+ 2085 0043 0B        		.uleb128 0xb
+ 2086 0044 3A        		.uleb128 0x3a
+ 2087 0045 0B        		.uleb128 0xb
+ 2088 0046 3B        		.uleb128 0x3b
+ 2089 0047 0B        		.uleb128 0xb
+ 2090 0048 01        		.uleb128 0x1
+ 2091 0049 13        		.uleb128 0x13
+ 2092 004a 00        		.byte	0x0
+ 2093 004b 00        		.byte	0x0
+ 2094 004c 07        		.uleb128 0x7
+ 2095 004d 28        		.uleb128 0x28
+ 2096 004e 00        		.byte	0x0
+ 2097 004f 03        		.uleb128 0x3
+ 2098 0050 0E        		.uleb128 0xe
+ 2099 0051 1C        		.uleb128 0x1c
+ 2100 0052 0D        		.uleb128 0xd
+ 2101 0053 00        		.byte	0x0
+ 2102 0054 00        		.byte	0x0
+ 2103 0055 08        		.uleb128 0x8
+ 2104 0056 13        		.uleb128 0x13
+ 2105 0057 01        		.byte	0x1
+ 2106 0058 0B        		.uleb128 0xb
+ 2107 0059 0B        		.uleb128 0xb
+ 2108 005a 3A        		.uleb128 0x3a
+ 2109 005b 0B        		.uleb128 0xb
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 38
+
+
+ 2110 005c 3B        		.uleb128 0x3b
+ 2111 005d 0B        		.uleb128 0xb
+ 2112 005e 01        		.uleb128 0x1
+ 2113 005f 13        		.uleb128 0x13
+ 2114 0060 00        		.byte	0x0
+ 2115 0061 00        		.byte	0x0
+ 2116 0062 09        		.uleb128 0x9
+ 2117 0063 0D        		.uleb128 0xd
+ 2118 0064 00        		.byte	0x0
+ 2119 0065 03        		.uleb128 0x3
+ 2120 0066 0E        		.uleb128 0xe
+ 2121 0067 3A        		.uleb128 0x3a
+ 2122 0068 0B        		.uleb128 0xb
+ 2123 0069 3B        		.uleb128 0x3b
+ 2124 006a 0B        		.uleb128 0xb
+ 2125 006b 49        		.uleb128 0x49
+ 2126 006c 13        		.uleb128 0x13
+ 2127 006d 38        		.uleb128 0x38
+ 2128 006e 0A        		.uleb128 0xa
+ 2129 006f 00        		.byte	0x0
+ 2130 0070 00        		.byte	0x0
+ 2131 0071 0A        		.uleb128 0xa
+ 2132 0072 0D        		.uleb128 0xd
+ 2133 0073 00        		.byte	0x0
+ 2134 0074 03        		.uleb128 0x3
+ 2135 0075 08        		.uleb128 0x8
+ 2136 0076 3A        		.uleb128 0x3a
+ 2137 0077 0B        		.uleb128 0xb
+ 2138 0078 3B        		.uleb128 0x3b
+ 2139 0079 0B        		.uleb128 0xb
+ 2140 007a 49        		.uleb128 0x49
+ 2141 007b 13        		.uleb128 0x13
+ 2142 007c 38        		.uleb128 0x38
+ 2143 007d 0A        		.uleb128 0xa
+ 2144 007e 00        		.byte	0x0
+ 2145 007f 00        		.byte	0x0
+ 2146 0080 0B        		.uleb128 0xb
+ 2147 0081 16        		.uleb128 0x16
+ 2148 0082 00        		.byte	0x0
+ 2149 0083 03        		.uleb128 0x3
+ 2150 0084 08        		.uleb128 0x8
+ 2151 0085 3A        		.uleb128 0x3a
+ 2152 0086 0B        		.uleb128 0xb
+ 2153 0087 3B        		.uleb128 0x3b
+ 2154 0088 0B        		.uleb128 0xb
+ 2155 0089 49        		.uleb128 0x49
+ 2156 008a 13        		.uleb128 0x13
+ 2157 008b 00        		.byte	0x0
+ 2158 008c 00        		.byte	0x0
+ 2159 008d 0C        		.uleb128 0xc
+ 2160 008e 2E        		.uleb128 0x2e
+ 2161 008f 01        		.byte	0x1
+ 2162 0090 3F        		.uleb128 0x3f
+ 2163 0091 0C        		.uleb128 0xc
+ 2164 0092 03        		.uleb128 0x3
+ 2165 0093 0E        		.uleb128 0xe
+ 2166 0094 3A        		.uleb128 0x3a
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 39
+
+
+ 2167 0095 0B        		.uleb128 0xb
+ 2168 0096 3B        		.uleb128 0x3b
+ 2169 0097 0B        		.uleb128 0xb
+ 2170 0098 27        		.uleb128 0x27
+ 2171 0099 0C        		.uleb128 0xc
+ 2172 009a 11        		.uleb128 0x11
+ 2173 009b 01        		.uleb128 0x1
+ 2174 009c 12        		.uleb128 0x12
+ 2175 009d 01        		.uleb128 0x1
+ 2176 009e 40        		.uleb128 0x40
+ 2177 009f 0A        		.uleb128 0xa
+ 2178 00a0 01        		.uleb128 0x1
+ 2179 00a1 13        		.uleb128 0x13
+ 2180 00a2 00        		.byte	0x0
+ 2181 00a3 00        		.byte	0x0
+ 2182 00a4 0D        		.uleb128 0xd
+ 2183 00a5 05        		.uleb128 0x5
+ 2184 00a6 00        		.byte	0x0
+ 2185 00a7 03        		.uleb128 0x3
+ 2186 00a8 08        		.uleb128 0x8
+ 2187 00a9 3A        		.uleb128 0x3a
+ 2188 00aa 0B        		.uleb128 0xb
+ 2189 00ab 3B        		.uleb128 0x3b
+ 2190 00ac 0B        		.uleb128 0xb
+ 2191 00ad 49        		.uleb128 0x49
+ 2192 00ae 13        		.uleb128 0x13
+ 2193 00af 02        		.uleb128 0x2
+ 2194 00b0 06        		.uleb128 0x6
+ 2195 00b1 00        		.byte	0x0
+ 2196 00b2 00        		.byte	0x0
+ 2197 00b3 0E        		.uleb128 0xe
+ 2198 00b4 05        		.uleb128 0x5
+ 2199 00b5 00        		.byte	0x0
+ 2200 00b6 03        		.uleb128 0x3
+ 2201 00b7 08        		.uleb128 0x8
+ 2202 00b8 3A        		.uleb128 0x3a
+ 2203 00b9 0B        		.uleb128 0xb
+ 2204 00ba 3B        		.uleb128 0x3b
+ 2205 00bb 0B        		.uleb128 0xb
+ 2206 00bc 49        		.uleb128 0x49
+ 2207 00bd 13        		.uleb128 0x13
+ 2208 00be 02        		.uleb128 0x2
+ 2209 00bf 0A        		.uleb128 0xa
+ 2210 00c0 00        		.byte	0x0
+ 2211 00c1 00        		.byte	0x0
+ 2212 00c2 0F        		.uleb128 0xf
+ 2213 00c3 34        		.uleb128 0x34
+ 2214 00c4 00        		.byte	0x0
+ 2215 00c5 03        		.uleb128 0x3
+ 2216 00c6 08        		.uleb128 0x8
+ 2217 00c7 3A        		.uleb128 0x3a
+ 2218 00c8 0B        		.uleb128 0xb
+ 2219 00c9 3B        		.uleb128 0x3b
+ 2220 00ca 0B        		.uleb128 0xb
+ 2221 00cb 49        		.uleb128 0x49
+ 2222 00cc 13        		.uleb128 0x13
+ 2223 00cd 02        		.uleb128 0x2
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 40
+
+
+ 2224 00ce 06        		.uleb128 0x6
+ 2225 00cf 00        		.byte	0x0
+ 2226 00d0 00        		.byte	0x0
+ 2227 00d1 10        		.uleb128 0x10
+ 2228 00d2 34        		.uleb128 0x34
+ 2229 00d3 00        		.byte	0x0
+ 2230 00d4 03        		.uleb128 0x3
+ 2231 00d5 08        		.uleb128 0x8
+ 2232 00d6 3A        		.uleb128 0x3a
+ 2233 00d7 0B        		.uleb128 0xb
+ 2234 00d8 3B        		.uleb128 0x3b
+ 2235 00d9 0B        		.uleb128 0xb
+ 2236 00da 49        		.uleb128 0x49
+ 2237 00db 13        		.uleb128 0x13
+ 2238 00dc 02        		.uleb128 0x2
+ 2239 00dd 0A        		.uleb128 0xa
+ 2240 00de 00        		.byte	0x0
+ 2241 00df 00        		.byte	0x0
+ 2242 00e0 11        		.uleb128 0x11
+ 2243 00e1 34        		.uleb128 0x34
+ 2244 00e2 00        		.byte	0x0
+ 2245 00e3 03        		.uleb128 0x3
+ 2246 00e4 0E        		.uleb128 0xe
+ 2247 00e5 3A        		.uleb128 0x3a
+ 2248 00e6 0B        		.uleb128 0xb
+ 2249 00e7 3B        		.uleb128 0x3b
+ 2250 00e8 0B        		.uleb128 0xb
+ 2251 00e9 49        		.uleb128 0x49
+ 2252 00ea 13        		.uleb128 0x13
+ 2253 00eb 02        		.uleb128 0x2
+ 2254 00ec 0A        		.uleb128 0xa
+ 2255 00ed 00        		.byte	0x0
+ 2256 00ee 00        		.byte	0x0
+ 2257 00ef 12        		.uleb128 0x12
+ 2258 00f0 0F        		.uleb128 0xf
+ 2259 00f1 00        		.byte	0x0
+ 2260 00f2 0B        		.uleb128 0xb
+ 2261 00f3 0B        		.uleb128 0xb
+ 2262 00f4 49        		.uleb128 0x49
+ 2263 00f5 13        		.uleb128 0x13
+ 2264 00f6 00        		.byte	0x0
+ 2265 00f7 00        		.byte	0x0
+ 2266 00f8 13        		.uleb128 0x13
+ 2267 00f9 2E        		.uleb128 0x2e
+ 2268 00fa 01        		.byte	0x1
+ 2269 00fb 3F        		.uleb128 0x3f
+ 2270 00fc 0C        		.uleb128 0xc
+ 2271 00fd 03        		.uleb128 0x3
+ 2272 00fe 0E        		.uleb128 0xe
+ 2273 00ff 3A        		.uleb128 0x3a
+ 2274 0100 0B        		.uleb128 0xb
+ 2275 0101 3B        		.uleb128 0x3b
+ 2276 0102 0B        		.uleb128 0xb
+ 2277 0103 11        		.uleb128 0x11
+ 2278 0104 01        		.uleb128 0x1
+ 2279 0105 12        		.uleb128 0x12
+ 2280 0106 01        		.uleb128 0x1
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 41
+
+
+ 2281 0107 40        		.uleb128 0x40
+ 2282 0108 0A        		.uleb128 0xa
+ 2283 0109 01        		.uleb128 0x1
+ 2284 010a 13        		.uleb128 0x13
+ 2285 010b 00        		.byte	0x0
+ 2286 010c 00        		.byte	0x0
+ 2287 010d 14        		.uleb128 0x14
+ 2288 010e 34        		.uleb128 0x34
+ 2289 010f 00        		.byte	0x0
+ 2290 0110 03        		.uleb128 0x3
+ 2291 0111 0E        		.uleb128 0xe
+ 2292 0112 3A        		.uleb128 0x3a
+ 2293 0113 0B        		.uleb128 0xb
+ 2294 0114 3B        		.uleb128 0x3b
+ 2295 0115 0B        		.uleb128 0xb
+ 2296 0116 49        		.uleb128 0x49
+ 2297 0117 13        		.uleb128 0x13
+ 2298 0118 02        		.uleb128 0x2
+ 2299 0119 06        		.uleb128 0x6
+ 2300 011a 00        		.byte	0x0
+ 2301 011b 00        		.byte	0x0
+ 2302 011c 15        		.uleb128 0x15
+ 2303 011d 34        		.uleb128 0x34
+ 2304 011e 00        		.byte	0x0
+ 2305 011f 03        		.uleb128 0x3
+ 2306 0120 0E        		.uleb128 0xe
+ 2307 0121 3A        		.uleb128 0x3a
+ 2308 0122 0B        		.uleb128 0xb
+ 2309 0123 3B        		.uleb128 0x3b
+ 2310 0124 0B        		.uleb128 0xb
+ 2311 0125 49        		.uleb128 0x49
+ 2312 0126 13        		.uleb128 0x13
+ 2313 0127 00        		.byte	0x0
+ 2314 0128 00        		.byte	0x0
+ 2315 0129 16        		.uleb128 0x16
+ 2316 012a 0B        		.uleb128 0xb
+ 2317 012b 01        		.byte	0x1
+ 2318 012c 55        		.uleb128 0x55
+ 2319 012d 06        		.uleb128 0x6
+ 2320 012e 00        		.byte	0x0
+ 2321 012f 00        		.byte	0x0
+ 2322 0130 17        		.uleb128 0x17
+ 2323 0131 26        		.uleb128 0x26
+ 2324 0132 00        		.byte	0x0
+ 2325 0133 49        		.uleb128 0x49
+ 2326 0134 13        		.uleb128 0x13
+ 2327 0135 00        		.byte	0x0
+ 2328 0136 00        		.byte	0x0
+ 2329 0137 18        		.uleb128 0x18
+ 2330 0138 2E        		.uleb128 0x2e
+ 2331 0139 00        		.byte	0x0
+ 2332 013a 3F        		.uleb128 0x3f
+ 2333 013b 0C        		.uleb128 0xc
+ 2334 013c 03        		.uleb128 0x3
+ 2335 013d 0E        		.uleb128 0xe
+ 2336 013e 3A        		.uleb128 0x3a
+ 2337 013f 0B        		.uleb128 0xb
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 42
+
+
+ 2338 0140 3B        		.uleb128 0x3b
+ 2339 0141 0B        		.uleb128 0xb
+ 2340 0142 11        		.uleb128 0x11
+ 2341 0143 01        		.uleb128 0x1
+ 2342 0144 12        		.uleb128 0x12
+ 2343 0145 01        		.uleb128 0x1
+ 2344 0146 40        		.uleb128 0x40
+ 2345 0147 0A        		.uleb128 0xa
+ 2346 0148 00        		.byte	0x0
+ 2347 0149 00        		.byte	0x0
+ 2348 014a 19        		.uleb128 0x19
+ 2349 014b 01        		.uleb128 0x1
+ 2350 014c 01        		.byte	0x1
+ 2351 014d 49        		.uleb128 0x49
+ 2352 014e 13        		.uleb128 0x13
+ 2353 014f 01        		.uleb128 0x1
+ 2354 0150 13        		.uleb128 0x13
+ 2355 0151 00        		.byte	0x0
+ 2356 0152 00        		.byte	0x0
+ 2357 0153 1A        		.uleb128 0x1a
+ 2358 0154 21        		.uleb128 0x21
+ 2359 0155 00        		.byte	0x0
+ 2360 0156 00        		.byte	0x0
+ 2361 0157 00        		.byte	0x0
+ 2362 0158 1B        		.uleb128 0x1b
+ 2363 0159 34        		.uleb128 0x34
+ 2364 015a 00        		.byte	0x0
+ 2365 015b 03        		.uleb128 0x3
+ 2366 015c 0E        		.uleb128 0xe
+ 2367 015d 3A        		.uleb128 0x3a
+ 2368 015e 0B        		.uleb128 0xb
+ 2369 015f 3B        		.uleb128 0x3b
+ 2370 0160 0B        		.uleb128 0xb
+ 2371 0161 49        		.uleb128 0x49
+ 2372 0162 13        		.uleb128 0x13
+ 2373 0163 3F        		.uleb128 0x3f
+ 2374 0164 0C        		.uleb128 0xc
+ 2375 0165 3C        		.uleb128 0x3c
+ 2376 0166 0C        		.uleb128 0xc
+ 2377 0167 00        		.byte	0x0
+ 2378 0168 00        		.byte	0x0
+ 2379 0169 1C        		.uleb128 0x1c
+ 2380 016a 34        		.uleb128 0x34
+ 2381 016b 00        		.byte	0x0
+ 2382 016c 03        		.uleb128 0x3
+ 2383 016d 0E        		.uleb128 0xe
+ 2384 016e 3A        		.uleb128 0x3a
+ 2385 016f 0B        		.uleb128 0xb
+ 2386 0170 3B        		.uleb128 0x3b
+ 2387 0171 0B        		.uleb128 0xb
+ 2388 0172 49        		.uleb128 0x49
+ 2389 0173 13        		.uleb128 0x13
+ 2390 0174 3F        		.uleb128 0x3f
+ 2391 0175 0C        		.uleb128 0xc
+ 2392 0176 02        		.uleb128 0x2
+ 2393 0177 0A        		.uleb128 0xa
+ 2394 0178 00        		.byte	0x0
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 43
+
+
+ 2395 0179 00        		.byte	0x0
+ 2396 017a 00        		.byte	0x0
+ 2397               		.section	.debug_pubnames,"",@progbits
+ 2398 0000 B100 0000 		.long	0xb1
+ 2399 0004 0200      		.word	0x2
+ 2400 0006 0000 0000 		.long	.Ldebug_info0
+ 2401 000a 1304 0000 		.long	0x413
+ 2402 000e 6B01 0000 		.long	0x16b
+ 2403 0012 7365 745F 		.string	"set_orientation"
+ 2403      6F72 6965 
+ 2403      6E74 6174 
+ 2403      696F 6E00 
+ 2404 0022 9101 0000 		.long	0x191
+ 2405 0026 6669 6C6C 		.string	"fill_rectangle"
+ 2405      5F72 6563 
+ 2405      7461 6E67 
+ 2405      6C65 00
+ 2406 0035 DF01 0000 		.long	0x1df
+ 2407 0039 6472 6177 		.string	"draw_rectangle"
+ 2407      5F72 6563 
+ 2407      7461 6E67 
+ 2407      6C65 00
+ 2408 0048 4B02 0000 		.long	0x24b
+ 2409 004c 6669 6C6C 		.string	"fill_rectangle_indexed"
+ 2409      5F72 6563 
+ 2409      7461 6E67 
+ 2409      6C65 5F69 
+ 2409      6E64 6578 
+ 2410 0063 9F02 0000 		.long	0x29f
+ 2411 0067 636C 6561 		.string	"clear_screen"
+ 2411      725F 7363 
+ 2411      7265 656E 
+ 2411      00
+ 2412 0074 C302 0000 		.long	0x2c3
+ 2413 0078 6469 7370 		.string	"display_char"
+ 2413      6C61 795F 
+ 2413      6368 6172 
+ 2413      00
+ 2414 0085 9503 0000 		.long	0x395
+ 2415 0089 6469 7370 		.string	"display_string"
+ 2415      6C61 795F 
+ 2415      7374 7269 
+ 2415      6E67 00
+ 2416 0098 D003 0000 		.long	0x3d0
+ 2417 009c 696E 6974 		.string	"init_lcd"
+ 2417      5F6C 6364 
+ 2417      00
+ 2418 00a5 0004 0000 		.long	0x400
+ 2419 00a9 6469 7370 		.string	"display"
+ 2419      6C61 7900 
+ 2420 00b1 0000 0000 		.long	0x0
+ 2421               		.section	.debug_aranges,"",@progbits
+ 2422 0000 1C00 0000 		.long	0x1c
+ 2423 0004 0200      		.word	0x2
+ 2424 0006 0000 0000 		.long	.Ldebug_info0
+ 2425 000a 04        		.byte	0x4
+ 2426 000b 00        		.byte	0x0
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 44
+
+
+ 2427 000c 0000      		.word	0x0
+ 2428 000e 0000      		.word	0x0
+ 2429 0010 0000 0000 		.long	.Ltext0
+ 2430 0014 7206 0000 		.long	.Letext0-.Ltext0
+ 2431 0018 0000 0000 		.long	0x0
+ 2432 001c 0000 0000 		.long	0x0
+ 2433               		.section	.debug_ranges,"",@progbits
+ 2434               	.Ldebug_ranges0:
+ 2435 0000 5205 0000 		.long	.LBB2-.Ltext0
+ 2436 0004 5C05 0000 		.long	.LBE2-.Ltext0
+ 2437 0008 8A05 0000 		.long	.LBB3-.Ltext0
+ 2438 000c 8E05 0000 		.long	.LBE3-.Ltext0
+ 2439 0010 0000 0000 		.long	0x0
+ 2440 0014 0000 0000 		.long	0x0
+ 2441               		.section	.debug_line
+ 2442 0000 6904 0000 		.long	.LELT0-.LSLT0
+ 2443               	.LSLT0:
+ 2444 0004 0200      		.word	0x2
+ 2445 0006 A800 0000 		.long	.LELTP0-.LASLTP0
+ 2446               	.LASLTP0:
+ 2447 000a 01        		.byte	0x1
+ 2448 000b 01        		.byte	0x1
+ 2449 000c F6        		.byte	0xf6
+ 2450 000d F5        		.byte	0xf5
+ 2451 000e 0A        		.byte	0xa
+ 2452 000f 00        		.byte	0x0
+ 2453 0010 01        		.byte	0x1
+ 2454 0011 01        		.byte	0x1
+ 2455 0012 01        		.byte	0x1
+ 2456 0013 01        		.byte	0x1
+ 2457 0014 00        		.byte	0x0
+ 2458 0015 00        		.byte	0x0
+ 2459 0016 00        		.byte	0x0
+ 2460 0017 01        		.byte	0x1
+ 2461 0018 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include"
+ 2461      696E 6176 
+ 2461      722D 3230 
+ 2461      3130 3031 
+ 2461      3130 2F6C 
+ 2462 0044 00        		.byte	0
+ 2463 0045 633A 2F77 		.ascii	"c:/winavr-20100110/lib/gcc/../../avr/include/avr"
+ 2463      696E 6176 
+ 2463      722D 3230 
+ 2463      3130 3031 
+ 2463      3130 2F6C 
+ 2464 0075 00        		.byte	0
+ 2465 0076 00        		.byte	0x0
+ 2466 0077 6C63 642E 		.string	"lcd.c"
+ 2466      6300 
+ 2467 007d 00        		.uleb128 0x0
+ 2468 007e 00        		.uleb128 0x0
+ 2469 007f 00        		.uleb128 0x0
+ 2470 0080 7374 6469 		.string	"stdint.h"
+ 2470      6E74 2E68 
+ 2470      00
+ 2471 0089 01        		.uleb128 0x1
+ 2472 008a 00        		.uleb128 0x0
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 45
+
+
+ 2473 008b 00        		.uleb128 0x0
+ 2474 008c 6176 722F 		.string	"avr/pgmspace.h"
+ 2474      7067 6D73 
+ 2474      7061 6365 
+ 2474      2E68 00
+ 2475 009b 01        		.uleb128 0x1
+ 2476 009c 00        		.uleb128 0x0
+ 2477 009d 00        		.uleb128 0x0
+ 2478 009e 6C63 642E 		.string	"lcd.h"
+ 2478      6800 
+ 2479 00a4 00        		.uleb128 0x0
+ 2480 00a5 00        		.uleb128 0x0
+ 2481 00a6 00        		.uleb128 0x0
+ 2482 00a7 666F 6E74 		.string	"font.h"
+ 2482      2E68 00
+ 2483 00ae 00        		.uleb128 0x0
+ 2484 00af 00        		.uleb128 0x0
+ 2485 00b0 00        		.uleb128 0x0
+ 2486 00b1 00        		.byte	0x0
+ 2487               	.LELTP0:
+ 2488 00b2 00        		.byte	0x0
+ 2489 00b3 05        		.uleb128 0x5
+ 2490 00b4 02        		.byte	0x2
+ 2491 00b5 0000 0000 		.long	.LM1
+ 2492 00b9 30        		.byte	0x30
+ 2493 00ba 00        		.byte	0x0
+ 2494 00bb 05        		.uleb128 0x5
+ 2495 00bc 02        		.byte	0x2
+ 2496 00bd 0000 0000 		.long	.LM2
+ 2497 00c1 15        		.byte	0x15
+ 2498 00c2 00        		.byte	0x0
+ 2499 00c3 05        		.uleb128 0x5
+ 2500 00c4 02        		.byte	0x2
+ 2501 00c5 0000 0000 		.long	.LM3
+ 2502 00c9 15        		.byte	0x15
+ 2503 00ca 00        		.byte	0x0
+ 2504 00cb 05        		.uleb128 0x5
+ 2505 00cc 02        		.byte	0x2
+ 2506 00cd 0000 0000 		.long	.LM4
+ 2507 00d1 15        		.byte	0x15
+ 2508 00d2 00        		.byte	0x0
+ 2509 00d3 05        		.uleb128 0x5
+ 2510 00d4 02        		.byte	0x2
+ 2511 00d5 0000 0000 		.long	.LM5
+ 2512 00d9 15        		.byte	0x15
+ 2513 00da 00        		.byte	0x0
+ 2514 00db 05        		.uleb128 0x5
+ 2515 00dc 02        		.byte	0x2
+ 2516 00dd 0000 0000 		.long	.LM6
+ 2517 00e1 15        		.byte	0x15
+ 2518 00e2 00        		.byte	0x0
+ 2519 00e3 05        		.uleb128 0x5
+ 2520 00e4 02        		.byte	0x2
+ 2521 00e5 0000 0000 		.long	.LM7
+ 2522 00e9 15        		.byte	0x15
+ 2523 00ea 00        		.byte	0x0
+ 2524 00eb 05        		.uleb128 0x5
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 46
+
+
+ 2525 00ec 02        		.byte	0x2
+ 2526 00ed 0000 0000 		.long	.LM8
+ 2527 00f1 16        		.byte	0x16
+ 2528 00f2 00        		.byte	0x0
+ 2529 00f3 05        		.uleb128 0x5
+ 2530 00f4 02        		.byte	0x2
+ 2531 00f5 0000 0000 		.long	.LM9
+ 2532 00f9 15        		.byte	0x15
+ 2533 00fa 00        		.byte	0x0
+ 2534 00fb 05        		.uleb128 0x5
+ 2535 00fc 02        		.byte	0x2
+ 2536 00fd 0000 0000 		.long	.LM10
+ 2537 0101 15        		.byte	0x15
+ 2538 0102 00        		.byte	0x0
+ 2539 0103 05        		.uleb128 0x5
+ 2540 0104 02        		.byte	0x2
+ 2541 0105 0000 0000 		.long	.LM11
+ 2542 0109 15        		.byte	0x15
+ 2543 010a 00        		.byte	0x0
+ 2544 010b 05        		.uleb128 0x5
+ 2545 010c 02        		.byte	0x2
+ 2546 010d 0000 0000 		.long	.LM12
+ 2547 0111 16        		.byte	0x16
+ 2548 0112 00        		.byte	0x0
+ 2549 0113 05        		.uleb128 0x5
+ 2550 0114 02        		.byte	0x2
+ 2551 0115 0000 0000 		.long	.LM13
+ 2552 0119 15        		.byte	0x15
+ 2553 011a 00        		.byte	0x0
+ 2554 011b 05        		.uleb128 0x5
+ 2555 011c 02        		.byte	0x2
+ 2556 011d 0000 0000 		.long	.LM14
+ 2557 0121 15        		.byte	0x15
+ 2558 0122 00        		.byte	0x0
+ 2559 0123 05        		.uleb128 0x5
+ 2560 0124 02        		.byte	0x2
+ 2561 0125 0000 0000 		.long	.LM15
+ 2562 0129 15        		.byte	0x15
+ 2563 012a 00        		.byte	0x0
+ 2564 012b 05        		.uleb128 0x5
+ 2565 012c 02        		.byte	0x2
+ 2566 012d 0000 0000 		.long	.LM16
+ 2567 0131 16        		.byte	0x16
+ 2568 0132 00        		.byte	0x0
+ 2569 0133 05        		.uleb128 0x5
+ 2570 0134 02        		.byte	0x2
+ 2571 0135 0000 0000 		.long	.LM17
+ 2572 0139 15        		.byte	0x15
+ 2573 013a 00        		.byte	0x0
+ 2574 013b 05        		.uleb128 0x5
+ 2575 013c 02        		.byte	0x2
+ 2576 013d 0000 0000 		.long	.LM18
+ 2577 0141 15        		.byte	0x15
+ 2578 0142 00        		.byte	0x0
+ 2579 0143 05        		.uleb128 0x5
+ 2580 0144 02        		.byte	0x2
+ 2581 0145 0000 0000 		.long	.LM19
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 47
+
+
+ 2582 0149 15        		.byte	0x15
+ 2583 014a 00        		.byte	0x0
+ 2584 014b 05        		.uleb128 0x5
+ 2585 014c 02        		.byte	0x2
+ 2586 014d 0000 0000 		.long	.LM20
+ 2587 0151 16        		.byte	0x16
+ 2588 0152 00        		.byte	0x0
+ 2589 0153 05        		.uleb128 0x5
+ 2590 0154 02        		.byte	0x2
+ 2591 0155 0000 0000 		.long	.LM21
+ 2592 0159 15        		.byte	0x15
+ 2593 015a 00        		.byte	0x0
+ 2594 015b 05        		.uleb128 0x5
+ 2595 015c 02        		.byte	0x2
+ 2596 015d 0000 0000 		.long	.LM22
+ 2597 0161 15        		.byte	0x15
+ 2598 0162 00        		.byte	0x0
+ 2599 0163 05        		.uleb128 0x5
+ 2600 0164 02        		.byte	0x2
+ 2601 0165 0000 0000 		.long	.LM23
+ 2602 0169 15        		.byte	0x15
+ 2603 016a 00        		.byte	0x0
+ 2604 016b 05        		.uleb128 0x5
+ 2605 016c 02        		.byte	0x2
+ 2606 016d 0000 0000 		.long	.LM24
+ 2607 0171 15        		.byte	0x15
+ 2608 0172 00        		.byte	0x0
+ 2609 0173 05        		.uleb128 0x5
+ 2610 0174 02        		.byte	0x2
+ 2611 0175 0000 0000 		.long	.LM25
+ 2612 0179 15        		.byte	0x15
+ 2613 017a 00        		.byte	0x0
+ 2614 017b 05        		.uleb128 0x5
+ 2615 017c 02        		.byte	0x2
+ 2616 017d 0000 0000 		.long	.LM26
+ 2617 0181 15        		.byte	0x15
+ 2618 0182 00        		.byte	0x0
+ 2619 0183 05        		.uleb128 0x5
+ 2620 0184 02        		.byte	0x2
+ 2621 0185 0000 0000 		.long	.LM27
+ 2622 0189 23        		.byte	0x23
+ 2623 018a 00        		.byte	0x0
+ 2624 018b 05        		.uleb128 0x5
+ 2625 018c 02        		.byte	0x2
+ 2626 018d 0000 0000 		.long	.LM28
+ 2627 0191 01        		.byte	0x1
+ 2628 0192 00        		.byte	0x0
+ 2629 0193 05        		.uleb128 0x5
+ 2630 0194 02        		.byte	0x2
+ 2631 0195 0000 0000 		.long	.LM29
+ 2632 0199 16        		.byte	0x16
+ 2633 019a 00        		.byte	0x0
+ 2634 019b 05        		.uleb128 0x5
+ 2635 019c 02        		.byte	0x2
+ 2636 019d 0000 0000 		.long	.LM30
+ 2637 01a1 15        		.byte	0x15
+ 2638 01a2 00        		.byte	0x0
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 48
+
+
+ 2639 01a3 05        		.uleb128 0x5
+ 2640 01a4 02        		.byte	0x2
+ 2641 01a5 0000 0000 		.long	.LM31
+ 2642 01a9 15        		.byte	0x15
+ 2643 01aa 00        		.byte	0x0
+ 2644 01ab 05        		.uleb128 0x5
+ 2645 01ac 02        		.byte	0x2
+ 2646 01ad 0000 0000 		.long	.LM32
+ 2647 01b1 15        		.byte	0x15
+ 2648 01b2 00        		.byte	0x0
+ 2649 01b3 05        		.uleb128 0x5
+ 2650 01b4 02        		.byte	0x2
+ 2651 01b5 0000 0000 		.long	.LM33
+ 2652 01b9 15        		.byte	0x15
+ 2653 01ba 00        		.byte	0x0
+ 2654 01bb 05        		.uleb128 0x5
+ 2655 01bc 02        		.byte	0x2
+ 2656 01bd 0000 0000 		.long	.LM34
+ 2657 01c1 15        		.byte	0x15
+ 2658 01c2 00        		.byte	0x0
+ 2659 01c3 05        		.uleb128 0x5
+ 2660 01c4 02        		.byte	0x2
+ 2661 01c5 0000 0000 		.long	.LM35
+ 2662 01c9 15        		.byte	0x15
+ 2663 01ca 00        		.byte	0x0
+ 2664 01cb 05        		.uleb128 0x5
+ 2665 01cc 02        		.byte	0x2
+ 2666 01cd 0000 0000 		.long	.LM36
+ 2667 01d1 17        		.byte	0x17
+ 2668 01d2 00        		.byte	0x0
+ 2669 01d3 05        		.uleb128 0x5
+ 2670 01d4 02        		.byte	0x2
+ 2671 01d5 0000 0000 		.long	.LM37
+ 2672 01d9 12        		.byte	0x12
+ 2673 01da 00        		.byte	0x0
+ 2674 01db 05        		.uleb128 0x5
+ 2675 01dc 02        		.byte	0x2
+ 2676 01dd 0000 0000 		.long	.LM38
+ 2677 01e1 16        		.byte	0x16
+ 2678 01e2 00        		.byte	0x0
+ 2679 01e3 05        		.uleb128 0x5
+ 2680 01e4 02        		.byte	0x2
+ 2681 01e5 0000 0000 		.long	.LM39
+ 2682 01e9 13        		.byte	0x13
+ 2683 01ea 00        		.byte	0x0
+ 2684 01eb 05        		.uleb128 0x5
+ 2685 01ec 02        		.byte	0x2
+ 2686 01ed 0000 0000 		.long	.LM40
+ 2687 01f1 13        		.byte	0x13
+ 2688 01f2 00        		.byte	0x0
+ 2689 01f3 05        		.uleb128 0x5
+ 2690 01f4 02        		.byte	0x2
+ 2691 01f5 0000 0000 		.long	.LM41
+ 2692 01f9 17        		.byte	0x17
+ 2693 01fa 00        		.byte	0x0
+ 2694 01fb 05        		.uleb128 0x5
+ 2695 01fc 02        		.byte	0x2
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 49
+
+
+ 2696 01fd 0000 0000 		.long	.LM42
+ 2697 0201 03        		.byte	0x3
+ 2698 0202 68        		.sleb128 -24
+ 2699 0203 01        		.byte	0x1
+ 2700 0204 00        		.byte	0x0
+ 2701 0205 05        		.uleb128 0x5
+ 2702 0206 02        		.byte	0x2
+ 2703 0207 0000 0000 		.long	.LM43
+ 2704 020b 01        		.byte	0x1
+ 2705 020c 00        		.byte	0x0
+ 2706 020d 05        		.uleb128 0x5
+ 2707 020e 02        		.byte	0x2
+ 2708 020f 0000 0000 		.long	.LM44
+ 2709 0213 15        		.byte	0x15
+ 2710 0214 00        		.byte	0x0
+ 2711 0215 05        		.uleb128 0x5
+ 2712 0216 02        		.byte	0x2
+ 2713 0217 0000 0000 		.long	.LM45
+ 2714 021b 15        		.byte	0x15
+ 2715 021c 00        		.byte	0x0
+ 2716 021d 05        		.uleb128 0x5
+ 2717 021e 02        		.byte	0x2
+ 2718 021f 0000 0000 		.long	.LM46
+ 2719 0223 15        		.byte	0x15
+ 2720 0224 00        		.byte	0x0
+ 2721 0225 05        		.uleb128 0x5
+ 2722 0226 02        		.byte	0x2
+ 2723 0227 0000 0000 		.long	.LM47
+ 2724 022b 15        		.byte	0x15
+ 2725 022c 00        		.byte	0x0
+ 2726 022d 05        		.uleb128 0x5
+ 2727 022e 02        		.byte	0x2
+ 2728 022f 0000 0000 		.long	.LM48
+ 2729 0233 15        		.byte	0x15
+ 2730 0234 00        		.byte	0x0
+ 2731 0235 05        		.uleb128 0x5
+ 2732 0236 02        		.byte	0x2
+ 2733 0237 0000 0000 		.long	.LM49
+ 2734 023b 15        		.byte	0x15
+ 2735 023c 00        		.byte	0x0
+ 2736 023d 05        		.uleb128 0x5
+ 2737 023e 02        		.byte	0x2
+ 2738 023f 0000 0000 		.long	.LM50
+ 2739 0243 15        		.byte	0x15
+ 2740 0244 00        		.byte	0x0
+ 2741 0245 05        		.uleb128 0x5
+ 2742 0246 02        		.byte	0x2
+ 2743 0247 0000 0000 		.long	.LM51
+ 2744 024b 15        		.byte	0x15
+ 2745 024c 00        		.byte	0x0
+ 2746 024d 05        		.uleb128 0x5
+ 2747 024e 02        		.byte	0x2
+ 2748 024f 0000 0000 		.long	.LM52
+ 2749 0253 15        		.byte	0x15
+ 2750 0254 00        		.byte	0x0
+ 2751 0255 05        		.uleb128 0x5
+ 2752 0256 02        		.byte	0x2
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 50
+
+
+ 2753 0257 0000 0000 		.long	.LM53
+ 2754 025b 26        		.byte	0x26
+ 2755 025c 00        		.byte	0x0
+ 2756 025d 05        		.uleb128 0x5
+ 2757 025e 02        		.byte	0x2
+ 2758 025f 0000 0000 		.long	.LM54
+ 2759 0263 01        		.byte	0x1
+ 2760 0264 00        		.byte	0x0
+ 2761 0265 05        		.uleb128 0x5
+ 2762 0266 02        		.byte	0x2
+ 2763 0267 0000 0000 		.long	.LM55
+ 2764 026b 16        		.byte	0x16
+ 2765 026c 00        		.byte	0x0
+ 2766 026d 05        		.uleb128 0x5
+ 2767 026e 02        		.byte	0x2
+ 2768 026f 0000 0000 		.long	.LM56
+ 2769 0273 15        		.byte	0x15
+ 2770 0274 00        		.byte	0x0
+ 2771 0275 05        		.uleb128 0x5
+ 2772 0276 02        		.byte	0x2
+ 2773 0277 0000 0000 		.long	.LM57
+ 2774 027b 15        		.byte	0x15
+ 2775 027c 00        		.byte	0x0
+ 2776 027d 05        		.uleb128 0x5
+ 2777 027e 02        		.byte	0x2
+ 2778 027f 0000 0000 		.long	.LM58
+ 2779 0283 15        		.byte	0x15
+ 2780 0284 00        		.byte	0x0
+ 2781 0285 05        		.uleb128 0x5
+ 2782 0286 02        		.byte	0x2
+ 2783 0287 0000 0000 		.long	.LM59
+ 2784 028b 15        		.byte	0x15
+ 2785 028c 00        		.byte	0x0
+ 2786 028d 05        		.uleb128 0x5
+ 2787 028e 02        		.byte	0x2
+ 2788 028f 0000 0000 		.long	.LM60
+ 2789 0293 15        		.byte	0x15
+ 2790 0294 00        		.byte	0x0
+ 2791 0295 05        		.uleb128 0x5
+ 2792 0296 02        		.byte	0x2
+ 2793 0297 0000 0000 		.long	.LM61
+ 2794 029b 15        		.byte	0x15
+ 2795 029c 00        		.byte	0x0
+ 2796 029d 05        		.uleb128 0x5
+ 2797 029e 02        		.byte	0x2
+ 2798 029f 0000 0000 		.long	.LM62
+ 2799 02a3 17        		.byte	0x17
+ 2800 02a4 00        		.byte	0x0
+ 2801 02a5 05        		.uleb128 0x5
+ 2802 02a6 02        		.byte	0x2
+ 2803 02a7 0000 0000 		.long	.LM63
+ 2804 02ab 03        		.byte	0x3
+ 2805 02ac 75        		.sleb128 -11
+ 2806 02ad 01        		.byte	0x1
+ 2807 02ae 00        		.byte	0x0
+ 2808 02af 05        		.uleb128 0x5
+ 2809 02b0 02        		.byte	0x2
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 51
+
+
+ 2810 02b1 0000 0000 		.long	.LM64
+ 2811 02b5 1F        		.byte	0x1f
+ 2812 02b6 00        		.byte	0x0
+ 2813 02b7 05        		.uleb128 0x5
+ 2814 02b8 02        		.byte	0x2
+ 2815 02b9 0000 0000 		.long	.LM65
+ 2816 02bd 13        		.byte	0x13
+ 2817 02be 00        		.byte	0x0
+ 2818 02bf 05        		.uleb128 0x5
+ 2819 02c0 02        		.byte	0x2
+ 2820 02c1 0000 0000 		.long	.LM66
+ 2821 02c5 13        		.byte	0x13
+ 2822 02c6 00        		.byte	0x0
+ 2823 02c7 05        		.uleb128 0x5
+ 2824 02c8 02        		.byte	0x2
+ 2825 02c9 0000 0000 		.long	.LM67
+ 2826 02cd 17        		.byte	0x17
+ 2827 02ce 00        		.byte	0x0
+ 2828 02cf 05        		.uleb128 0x5
+ 2829 02d0 02        		.byte	0x2
+ 2830 02d1 0000 0000 		.long	.LM68
+ 2831 02d5 17        		.byte	0x17
+ 2832 02d6 00        		.byte	0x0
+ 2833 02d7 05        		.uleb128 0x5
+ 2834 02d8 02        		.byte	0x2
+ 2835 02d9 0000 0000 		.long	.LM69
+ 2836 02dd 15        		.byte	0x15
+ 2837 02de 00        		.byte	0x0
+ 2838 02df 05        		.uleb128 0x5
+ 2839 02e0 02        		.byte	0x2
+ 2840 02e1 0000 0000 		.long	.LM70
+ 2841 02e5 15        		.byte	0x15
+ 2842 02e6 00        		.byte	0x0
+ 2843 02e7 05        		.uleb128 0x5
+ 2844 02e8 02        		.byte	0x2
+ 2845 02e9 0000 0000 		.long	.LM71
+ 2846 02ed 15        		.byte	0x15
+ 2847 02ee 00        		.byte	0x0
+ 2848 02ef 05        		.uleb128 0x5
+ 2849 02f0 02        		.byte	0x2
+ 2850 02f1 0000 0000 		.long	.LM72
+ 2851 02f5 15        		.byte	0x15
+ 2852 02f6 00        		.byte	0x0
+ 2853 02f7 05        		.uleb128 0x5
+ 2854 02f8 02        		.byte	0x2
+ 2855 02f9 0000 0000 		.long	.LM73
+ 2856 02fd 15        		.byte	0x15
+ 2857 02fe 00        		.byte	0x0
+ 2858 02ff 05        		.uleb128 0x5
+ 2859 0300 02        		.byte	0x2
+ 2860 0301 0000 0000 		.long	.LM74
+ 2861 0305 17        		.byte	0x17
+ 2862 0306 00        		.byte	0x0
+ 2863 0307 05        		.uleb128 0x5
+ 2864 0308 02        		.byte	0x2
+ 2865 0309 0000 0000 		.long	.LM75
+ 2866 030d 18        		.byte	0x18
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 52
+
+
+ 2867 030e 00        		.byte	0x0
+ 2868 030f 05        		.uleb128 0x5
+ 2869 0310 02        		.byte	0x2
+ 2870 0311 0000 0000 		.long	.LM76
+ 2871 0315 1A        		.byte	0x1a
+ 2872 0316 00        		.byte	0x0
+ 2873 0317 05        		.uleb128 0x5
+ 2874 0318 02        		.byte	0x2
+ 2875 0319 0000 0000 		.long	.LM77
+ 2876 031d 15        		.byte	0x15
+ 2877 031e 00        		.byte	0x0
+ 2878 031f 05        		.uleb128 0x5
+ 2879 0320 02        		.byte	0x2
+ 2880 0321 0000 0000 		.long	.LM78
+ 2881 0325 15        		.byte	0x15
+ 2882 0326 00        		.byte	0x0
+ 2883 0327 05        		.uleb128 0x5
+ 2884 0328 02        		.byte	0x2
+ 2885 0329 0000 0000 		.long	.LM79
+ 2886 032d 18        		.byte	0x18
+ 2887 032e 00        		.byte	0x0
+ 2888 032f 05        		.uleb128 0x5
+ 2889 0330 02        		.byte	0x2
+ 2890 0331 0000 0000 		.long	.LM80
+ 2891 0335 03        		.byte	0x3
+ 2892 0336 74        		.sleb128 -12
+ 2893 0337 01        		.byte	0x1
+ 2894 0338 00        		.byte	0x0
+ 2895 0339 05        		.uleb128 0x5
+ 2896 033a 02        		.byte	0x2
+ 2897 033b 0000 0000 		.long	.LM81
+ 2898 033f 21        		.byte	0x21
+ 2899 0340 00        		.byte	0x0
+ 2900 0341 05        		.uleb128 0x5
+ 2901 0342 02        		.byte	0x2
+ 2902 0343 0000 0000 		.long	.LM82
+ 2903 0347 15        		.byte	0x15
+ 2904 0348 00        		.byte	0x0
+ 2905 0349 05        		.uleb128 0x5
+ 2906 034a 02        		.byte	0x2
+ 2907 034b 0000 0000 		.long	.LM83
+ 2908 034f 15        		.byte	0x15
+ 2909 0350 00        		.byte	0x0
+ 2910 0351 05        		.uleb128 0x5
+ 2911 0352 02        		.byte	0x2
+ 2912 0353 0000 0000 		.long	.LM84
+ 2913 0357 15        		.byte	0x15
+ 2914 0358 00        		.byte	0x0
+ 2915 0359 05        		.uleb128 0x5
+ 2916 035a 02        		.byte	0x2
+ 2917 035b 0000 0000 		.long	.LM85
+ 2918 035f 1C        		.byte	0x1c
+ 2919 0360 00        		.byte	0x0
+ 2920 0361 05        		.uleb128 0x5
+ 2921 0362 02        		.byte	0x2
+ 2922 0363 0000 0000 		.long	.LM86
+ 2923 0367 0E        		.byte	0xe
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 53
+
+
+ 2924 0368 00        		.byte	0x0
+ 2925 0369 05        		.uleb128 0x5
+ 2926 036a 02        		.byte	0x2
+ 2927 036b 0000 0000 		.long	.LM87
+ 2928 036f 17        		.byte	0x17
+ 2929 0370 00        		.byte	0x0
+ 2930 0371 05        		.uleb128 0x5
+ 2931 0372 02        		.byte	0x2
+ 2932 0373 0000 0000 		.long	.LM88
+ 2933 0377 11        		.byte	0x11
+ 2934 0378 00        		.byte	0x0
+ 2935 0379 05        		.uleb128 0x5
+ 2936 037a 02        		.byte	0x2
+ 2937 037b 0000 0000 		.long	.LM89
+ 2938 037f 15        		.byte	0x15
+ 2939 0380 00        		.byte	0x0
+ 2940 0381 05        		.uleb128 0x5
+ 2941 0382 02        		.byte	0x2
+ 2942 0383 0000 0000 		.long	.LM90
+ 2943 0387 15        		.byte	0x15
+ 2944 0388 00        		.byte	0x0
+ 2945 0389 05        		.uleb128 0x5
+ 2946 038a 02        		.byte	0x2
+ 2947 038b 0000 0000 		.long	.LM91
+ 2948 038f 15        		.byte	0x15
+ 2949 0390 00        		.byte	0x0
+ 2950 0391 05        		.uleb128 0x5
+ 2951 0392 02        		.byte	0x2
+ 2952 0393 0000 0000 		.long	.LM92
+ 2953 0397 15        		.byte	0x15
+ 2954 0398 00        		.byte	0x0
+ 2955 0399 05        		.uleb128 0x5
+ 2956 039a 02        		.byte	0x2
+ 2957 039b 0000 0000 		.long	.LM93
+ 2958 039f 16        		.byte	0x16
+ 2959 03a0 00        		.byte	0x0
+ 2960 03a1 05        		.uleb128 0x5
+ 2961 03a2 02        		.byte	0x2
+ 2962 03a3 0000 0000 		.long	.LM94
+ 2963 03a7 13        		.byte	0x13
+ 2964 03a8 00        		.byte	0x0
+ 2965 03a9 05        		.uleb128 0x5
+ 2966 03aa 02        		.byte	0x2
+ 2967 03ab 0000 0000 		.long	.LM95
+ 2968 03af 13        		.byte	0x13
+ 2969 03b0 00        		.byte	0x0
+ 2970 03b1 05        		.uleb128 0x5
+ 2971 03b2 02        		.byte	0x2
+ 2972 03b3 0000 0000 		.long	.LM96
+ 2973 03b7 0F        		.byte	0xf
+ 2974 03b8 00        		.byte	0x0
+ 2975 03b9 05        		.uleb128 0x5
+ 2976 03ba 02        		.byte	0x2
+ 2977 03bb 0000 0000 		.long	.LM97
+ 2978 03bf 1D        		.byte	0x1d
+ 2979 03c0 00        		.byte	0x0
+ 2980 03c1 05        		.uleb128 0x5
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 54
+
+
+ 2981 03c2 02        		.byte	0x2
+ 2982 03c3 0000 0000 		.long	.LM98
+ 2983 03c7 15        		.byte	0x15
+ 2984 03c8 00        		.byte	0x0
+ 2985 03c9 05        		.uleb128 0x5
+ 2986 03ca 02        		.byte	0x2
+ 2987 03cb 0000 0000 		.long	.LM99
+ 2988 03cf 15        		.byte	0x15
+ 2989 03d0 00        		.byte	0x0
+ 2990 03d1 05        		.uleb128 0x5
+ 2991 03d2 02        		.byte	0x2
+ 2992 03d3 0000 0000 		.long	.LM100
+ 2993 03d7 15        		.byte	0x15
+ 2994 03d8 00        		.byte	0x0
+ 2995 03d9 05        		.uleb128 0x5
+ 2996 03da 02        		.byte	0x2
+ 2997 03db 0000 0000 		.long	.LM101
+ 2998 03df 16        		.byte	0x16
+ 2999 03e0 00        		.byte	0x0
+ 3000 03e1 05        		.uleb128 0x5
+ 3001 03e2 02        		.byte	0x2
+ 3002 03e3 0000 0000 		.long	.LM102
+ 3003 03e7 13        		.byte	0x13
+ 3004 03e8 00        		.byte	0x0
+ 3005 03e9 05        		.uleb128 0x5
+ 3006 03ea 02        		.byte	0x2
+ 3007 03eb 0000 0000 		.long	.LM103
+ 3008 03ef 17        		.byte	0x17
+ 3009 03f0 00        		.byte	0x0
+ 3010 03f1 05        		.uleb128 0x5
+ 3011 03f2 02        		.byte	0x2
+ 3012 03f3 0000 0000 		.long	.LM104
+ 3013 03f7 15        		.byte	0x15
+ 3014 03f8 00        		.byte	0x0
+ 3015 03f9 05        		.uleb128 0x5
+ 3016 03fa 02        		.byte	0x2
+ 3017 03fb 0000 0000 		.long	.LM105
+ 3018 03ff 16        		.byte	0x16
+ 3019 0400 00        		.byte	0x0
+ 3020 0401 05        		.uleb128 0x5
+ 3021 0402 02        		.byte	0x2
+ 3022 0403 0000 0000 		.long	.LM106
+ 3023 0407 17        		.byte	0x17
+ 3024 0408 00        		.byte	0x0
+ 3025 0409 05        		.uleb128 0x5
+ 3026 040a 02        		.byte	0x2
+ 3027 040b 0000 0000 		.long	.LM107
+ 3028 040f 01        		.byte	0x1
+ 3029 0410 00        		.byte	0x0
+ 3030 0411 05        		.uleb128 0x5
+ 3031 0412 02        		.byte	0x2
+ 3032 0413 0000 0000 		.long	.LM108
+ 3033 0417 17        		.byte	0x17
+ 3034 0418 00        		.byte	0x0
+ 3035 0419 05        		.uleb128 0x5
+ 3036 041a 02        		.byte	0x2
+ 3037 041b 0000 0000 		.long	.LM109
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 55
+
+
+ 3038 041f 13        		.byte	0x13
+ 3039 0420 00        		.byte	0x0
+ 3040 0421 05        		.uleb128 0x5
+ 3041 0422 02        		.byte	0x2
+ 3042 0423 0000 0000 		.long	.LM110
+ 3043 0427 16        		.byte	0x16
+ 3044 0428 00        		.byte	0x0
+ 3045 0429 05        		.uleb128 0x5
+ 3046 042a 02        		.byte	0x2
+ 3047 042b 0000 0000 		.long	.LM111
+ 3048 042f 03        		.byte	0x3
+ 3049 0430 F17E      		.sleb128 -143
+ 3050 0432 01        		.byte	0x1
+ 3051 0433 00        		.byte	0x0
+ 3052 0434 05        		.uleb128 0x5
+ 3053 0435 02        		.byte	0x2
+ 3054 0436 0000 0000 		.long	.LM112
+ 3055 043a 17        		.byte	0x17
+ 3056 043b 00        		.byte	0x0
+ 3057 043c 05        		.uleb128 0x5
+ 3058 043d 02        		.byte	0x2
+ 3059 043e 0000 0000 		.long	.LM113
+ 3060 0442 15        		.byte	0x15
+ 3061 0443 00        		.byte	0x0
+ 3062 0444 05        		.uleb128 0x5
+ 3063 0445 02        		.byte	0x2
+ 3064 0446 0000 0000 		.long	.LM114
+ 3065 044a 17        		.byte	0x17
+ 3066 044b 00        		.byte	0x0
+ 3067 044c 05        		.uleb128 0x5
+ 3068 044d 02        		.byte	0x2
+ 3069 044e 0000 0000 		.long	.LM115
+ 3070 0452 15        		.byte	0x15
+ 3071 0453 00        		.byte	0x0
+ 3072 0454 05        		.uleb128 0x5
+ 3073 0455 02        		.byte	0x2
+ 3074 0456 0000 0000 		.long	.LM116
+ 3075 045a 16        		.byte	0x16
+ 3076 045b 00        		.byte	0x0
+ 3077 045c 05        		.uleb128 0x5
+ 3078 045d 02        		.byte	0x2
+ 3079 045e 0000 0000 		.long	.LM117
+ 3080 0462 15        		.byte	0x15
+ 3081 0463 00        		.byte	0x0
+ 3082 0464 05        		.uleb128 0x5
+ 3083 0465 02        		.byte	0x2
+ 3084 0466 0000 0000 		.long	.Letext0
+ 3085 046a 00        		.byte	0x0
+ 3086 046b 01        		.uleb128 0x1
+ 3087 046c 01        		.byte	0x1
+ 3088               	.LELT0:
+ 3089 046d 1600 0000 		.section	.debug_str,"MS",@progbits,1
+ 3089      0200 1000 
+ 3089      0000 0101 
+ 3089      FB0E 0A00 
+ 3089      0101 0101 
+ 3090               	.LASF45:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 56
+
+
+ 3091 0000 696E 6974 		.string	"init_lcd"
+ 3091      5F6C 6364 
+ 3091      00
+ 3092               	.LASF24:
+ 3093 0009 7365 745F 		.string	"set_orientation"
+ 3093      6F72 6965 
+ 3093      6E74 6174 
+ 3093      696F 6E00 
+ 3094               	.LASF41:
+ 3095 0019 474E 5520 		.string	"GNU C 4.3.3"
+ 3095      4320 342E 
+ 3095      332E 3300 
+ 3096               	.LASF43:
+ 3097 0025 433A 5C55 		.string	"C:\\Users\\Bazza\\git\\avr-snake\\lcdlib"
+ 3097      7365 7273 
+ 3097      5C42 617A 
+ 3097      7A61 5C67 
+ 3097      6974 5C61 
+ 3098               	.LASF9:
+ 3099 0049 7072 6F67 		.string	"prog_char"
+ 3099      5F63 6861 
+ 3099      7200 
+ 3100               	.LASF23:
+ 3101 0053 7265 6374 		.string	"rectangle"
+ 3101      616E 676C 
+ 3101      6500 
+ 3102               	.LASF27:
+ 3103 005d 7265 6332 		.string	"rec2"
+ 3103      00
+ 3104               	.LASF44:
+ 3105 0062 636C 6561 		.string	"clear_screen"
+ 3105      725F 7363 
+ 3105      7265 656E 
+ 3105      00
+ 3106               	.LASF2:
+ 3107 006f 7569 6E74 		.string	"uint8_t"
+ 3107      385F 7400 
+ 3108               	.LASF35:
+ 3109 0077 5F5F 6164 		.string	"__addr16"
+ 3109      6472 3136 
+ 3109      00
+ 3110               	.LASF15:
+ 3111 0080 7769 6474 		.string	"width"
+ 3111      6800 
+ 3112               	.LASF7:
+ 3113 0086 6C6F 6E67 		.string	"long long int"
+ 3113      206C 6F6E 
+ 3113      6720 696E 
+ 3113      7400 
+ 3114               	.LASF39:
+ 3115 0094 666F 6E74 		.string	"font5x7"
+ 3115      3578 3700 
+ 3116               	.LASF34:
+ 3117 009c 6269 7473 		.string	"bits"
+ 3117      00
+ 3118               	.LASF10:
+ 3119 00a1 4E6F 7274 		.string	"North"
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 57
+
+
+ 3119      6800 
+ 3120               	.LASF5:
+ 3121 00a7 6C6F 6E67 		.string	"long int"
+ 3121      2069 6E74 
+ 3121      00
+ 3122               	.LASF17:
+ 3123 00b0 6F72 6965 		.string	"orient"
+ 3123      6E74 00
+ 3124               	.LASF18:
+ 3125 00b7 666F 7265 		.string	"foreground"
+ 3125      6772 6F75 
+ 3125      6E64 00
+ 3126               	.LASF31:
+ 3127 00c2 6469 7370 		.string	"display_char"
+ 3127      6C61 795F 
+ 3127      6368 6172 
+ 3127      00
+ 3128               	.LASF21:
+ 3129 00cf 7269 6768 		.string	"right"
+ 3129      7400 
+ 3130               	.LASF1:
+ 3131 00d5 756E 7369 		.string	"unsigned char"
+ 3131      676E 6564 
+ 3131      2063 6861 
+ 3131      7200 
+ 3132               	.LASF13:
+ 3133 00e3 4561 7374 		.string	"East"
+ 3133      00
+ 3134               	.LASF22:
+ 3135 00e8 626F 7474 		.string	"bottom"
+ 3135      6F6D 00
+ 3136               	.LASF0:
+ 3137 00ef 7369 676E 		.string	"signed char"
+ 3137      6564 2063 
+ 3137      6861 7200 
+ 3138               	.LASF8:
+ 3139 00fb 6C6F 6E67 		.string	"long long unsigned int"
+ 3139      206C 6F6E 
+ 3139      6720 756E 
+ 3139      7369 676E 
+ 3139      6564 2069 
+ 3140               	.LASF16:
+ 3141 0112 6865 6967 		.string	"height"
+ 3141      6874 00
+ 3142               	.LASF4:
+ 3143 0119 756E 7369 		.string	"unsigned int"
+ 3143      676E 6564 
+ 3143      2069 6E74 
+ 3143      00
+ 3144               	.LASF3:
+ 3145 0126 7569 6E74 		.string	"uint16_t"
+ 3145      3136 5F74 
+ 3145      00
+ 3146               	.LASF36:
+ 3147 012f 5F5F 7265 		.string	"__result"
+ 3147      7375 6C74 
+ 3147      00
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 58
+
+
+ 3148               	.LASF14:
+ 3149 0138 6F72 6965 		.string	"orientation"
+ 3149      6E74 6174 
+ 3149      696F 6E00 
+ 3150               	.LASF37:
+ 3151 0144 6368 6172 		.string	"char"
+ 3151      00
+ 3152               	.LASF20:
+ 3153 0149 6C65 6674 		.string	"left"
+ 3153      00
+ 3154               	.LASF28:
+ 3155 014e 7265 6333 		.string	"rec3"
+ 3155      00
+ 3156               	.LASF29:
+ 3157 0153 7265 6334 		.string	"rec4"
+ 3157      00
+ 3158               	.LASF42:
+ 3159 0158 6C63 642E 		.string	"lcd.c"
+ 3159      6300 
+ 3160               	.LASF11:
+ 3161 015e 5765 7374 		.string	"West"
+ 3161      00
+ 3162               	.LASF38:
+ 3163 0163 6469 7370 		.string	"display_string"
+ 3163      6C61 795F 
+ 3163      7374 7269 
+ 3163      6E67 00
+ 3164               	.LASF25:
+ 3165 0172 6669 6C6C 		.string	"fill_rectangle"
+ 3165      5F72 6563 
+ 3165      7461 6E67 
+ 3165      6C65 00
+ 3166               	.LASF6:
+ 3167 0181 6C6F 6E67 		.string	"long unsigned int"
+ 3167      2075 6E73 
+ 3167      6967 6E65 
+ 3167      6420 696E 
+ 3167      7400 
+ 3168               	.LASF12:
+ 3169 0193 536F 7574 		.string	"South"
+ 3169      6800 
+ 3170               	.LASF40:
+ 3171 0199 6469 7370 		.string	"display"
+ 3171      6C61 7900 
+ 3172               	.LASF30:
+ 3173 01a1 6669 6C6C 		.string	"fill_rectangle_indexed"
+ 3173      5F72 6563 
+ 3173      7461 6E67 
+ 3173      6C65 5F69 
+ 3173      6E64 6578 
+ 3174               	.LASF33:
+ 3175 01b8 6D61 736B 		.string	"mask"
+ 3175      00
+ 3176               	.LASF32:
+ 3177 01bd 6664 6174 		.string	"fdata"
+ 3177      6100 
+ 3178               	.LASF19:
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 59
+
+
+ 3179 01c3 6261 636B 		.string	"background"
+ 3179      6772 6F75 
+ 3179      6E64 00
+ 3180               	.LASF26:
+ 3181 01ce 6472 6177 		.string	"draw_rectangle"
+ 3181      5F72 6563 
+ 3181      7461 6E67 
+ 3181      6C65 00
+ 3182               	.global __do_copy_data
+GAS LISTING C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s 			page 60
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd.c
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:2      *ABS*:0000003f __SREG__
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:5      *ABS*:00000034 __CCP__
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:18     .text:00000000 set_orientation
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:1068   .data:00000000 display
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:170    .text:00000108 fill_rectangle
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:321    .text:000001e6 draw_rectangle
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:478    .text:000002fc fill_rectangle_indexed
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:637    .text:000003e8 clear_screen
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:704    .text:00000466 display_char
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:998    .text:00000632 display_string
+C:\Users\Bazza\AppData\Local\Temp/ccMUxz5a.s:1038   .text:00000658 init_lcd
+
+UNDEFINED SYMBOLS
+font5x7
+init_display_controller
+__do_copy_data
